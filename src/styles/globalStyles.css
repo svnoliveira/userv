@@ -1,3 +1,26 @@
+@font-face {
+    font-family: Omnes;
+    src: url(/src/font/Omnes\ SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Omnes;
+    src: url(/src/font/Omnes\ Black.ttf);
+    font-weight: black;
+}
+
+@font-face {
+    font-family: Omnes;
+    src: url(/src/font/Omnes\ Light.ttf);
+    font-weight: light;
+}
+
+@font-face {
+    font-family: Omnes;
+    src: url(/src/font/Omnes\ Thin.ttf);
+    font-weight: thin;
+}
+
 :root{
     --color-brand-1: #30996b;
     --color-brand-2: #43328e;
@@ -11,23 +34,40 @@
     --color-mode: #FFFFFF;
 
     --container-size: 72.5rem;
+    font-size: 62.5%;
 
     /* ------------style guide fonts-------------------- */
     --tittle-1: 600 1.25rem/1.6rem 'Inter';
     /* ---------------extra fonts----------------------------- */
 }
 
+html{
+    background: rgb(48,153,107);
+    background: linear-gradient(0deg, rgba(48,153,107,1) 0%, rgba(65,62,138,1) 50%);
+}
+
+body{
+    max-width: 190rem;
+    height: 100dvh;
+    margin: auto;
+    font-family: 'Omnes';
+}
+
+button{
+    font-family: 'Omnes';
+}
+
 .toast { 
-    min-width: 250px; 
-    margin-left: -125px; 
+    min-width: 25rem;
+    margin-left: -1.25rem; 
     color: var(--color-mode);
     text-align: center;
-    border-radius: 2px;
-    padding: 16px;
+    border-radius: 0.2rem;
+    padding: 1.6rem;
     position: fixed;
     z-index: 1;
     left: 50%; 
-    bottom: 30px;
+    bottom: 3rem;
 
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -35,4 +75,66 @@
 
 .display-none {
     display: none;
+}
+
+/* fonts */
+.font-tittle--big {
+    font-size: 5.8rem;
+    font-weight: black;
+}
+
+.font-tittle--normal {
+    font-size: 2.2rem;
+    font-weight: black;
+}
+
+.font-tag {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.font-p-normal {
+    font-size: 1.8rem;
+}
+
+/* buttons */
+button {
+    cursor: pointer;
+}
+
+.btn--white--wide,
+.btn--white--deep {
+    background-color: var(--color-mode);
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.6rem;
+    transition: 0.5s;
+    border-radius: 999em;
+}
+
+.btn--white--wide {
+    padding: 0.8rem 3rem;
+}
+
+.btn--white--deep {
+    padding: 2rem 3rem;
+    width: 19.5rem;
+    text-align: center;
+}
+
+.btn--white--wide:hover,
+.btn--white--deep:hover {
+    background-color: var(--color-brand-1);
+    color: var(--color-mode);
+}
+
+.btn--nav {
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: transparent;
+    transition: 1s;
+}
+
+.btn--nav:hover {
+    transform: scale(1.1);
 }

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uServ | Home</title>
 
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/globalStyles.css">
     <link rel="stylesheet" href="./src/styles/index.css">
@@ -15,55 +21,69 @@
 
 <body>
     <header>
-        <img src="" alt="logo userv">
+        <div id="index__header__logo-container" role="img" aria-label="Logo da empresa Userv, pequeno ícone da letra U">
+        </div>
         <nav id="index__header__nav" class="index__nav">
-            <button>Usuário</button>
-            <button>Fornecedor</button>
-            <button>Contato</button>
+            <button class="btn--nav">Usuário</button>
+            <button class="btn--nav">Fornecedor</button>
+            <button class="contact-btn btn--white--wide">Contato</button>
         </nav>
     </header>
     <main>
         <section id="index__text__section">
-            <h1>t is a long established fact that a reader will be</h1>
-            <span>lets get aquainted</span>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing display-none
-                in the</p>
+            <div id="index__text__tittle">
+                <h1 class="font-tittle--big">Conectando você à sua Solução!</h1>
+                <img src="./src/image/index-collage.png" alt="Três pequenas fotos de pessoas de negócios">
+            </div>
             <div>
-                <ul>
+                <span class="font-tag">Seja parceiro!</span>
+                <p class="font-p-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                    in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+                    are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing display-none
+                    in the</p>
+            </div>
+            <div>
+                <ul class="index__text__list">
                     <li>
-                        <h2>title</h2>
-                        <p>info</p>
+                        <h2 class="font-tittle--normal">Área digital</h2>
+                        <p class="font-p-normal">Atuamos como uma vitrine online.
+                        </p>
                     </li>
                     <li>
-                        <h2>title</h2>
-                        <p>info</p>
+                        <h2 class="font-tittle--normal">Busca intuitiva</h2>
+                        <p class="font-p-normal">Interface amigável e filtros de busca.</p>
                     </li>
                     <li>
-                        <h2>title</h2>
-                        <p>info</p>
+                        <h2 class="font-tittle--normal">Dicas Precisas</h2>
+                        <p class="font-p-normal">Sobre os serviços prestados e dicas.</p>
                     </li>
                 </ul>
             </div>
-            <img src="" alt="">
-        </section>
-        <section>
-            <div id="index__contact__container" class="display-none">
-                Contato
+            <div id="index__text__logo-container" role="img" aria-label="Logo da empresa Userv de forma grande">
             </div>
-            <div>
-                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+        </section>
+        <section id="index__image__section">
+            <div id="index__contact__container" class="display-none">
+                <div>
+                    <span class="font-tittle--big">Contato</span>
+                    <div>
+                        <p class="font-p-normal">Whatsapp: (XX) 99999-9999</p>
+                        <p class="font-p-normal">Email: contato@userv.app</p>
+                        <p class="font-p-normal">Localização: RUA SUDARIO RODRIGUES GOMES, 884 - BAIRRO GOIAS - Araguari/MG</p>
+                    </div>
+                </div>
+            </div>
+            <div id="index__text">
+                <p class="font-p-normal">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
                     Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also</p>
             </div>
             <nav class="index__nav">
-                <button>Área do Usuário</button>
-                <button>Área do Fornecedor</button>
-                <button>Contato</button>
+                <a href="/usuario/home.html" class="btn--white--deep">Área do Usuário</a>
+                <a href="/fornecedor/login.html" class="btn--white--deep">Área do Fornecedor</a>
             </nav>
         </section>
     </main>
-    <footer>Todos Direitos reservados</footer>
+    <footer class="font-p-normal">Todos Direitos reservados</footer>
 </body>
 
 </html>

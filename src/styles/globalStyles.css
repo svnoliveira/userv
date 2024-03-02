@@ -1,0 +1,38 @@
+:root{
+    --color-brand-1: #30996b;
+    --color-brand-2: #43328e;
+
+    --color-grey-1: #212529;
+    --color-grey-2: #495057;
+    --color-grey-3: #ADB5BD;
+    --color-grey-4: #E9ECEF;
+    --color-grey-5: #F1F3F5;
+    --color-grey-6: #F8F8F8;
+    --color-mode: #FFFFFF;
+
+    --container-size: 72.5rem;
+
+    /* ------------style guide fonts-------------------- */
+    --tittle-1: 600 1.25rem/1.6rem 'Inter';
+    /* ---------------extra fonts----------------------------- */
+}
+
+.toast { 
+    min-width: 250px; 
+    margin-left: -125px; 
+    color: var(--color-mode);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%; 
+    bottom: 30px;
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.display-none {
+    display: none;
+}

@@ -23,15 +23,18 @@ export const toast = (color, message) => {
     }, 3000);
 }
 
-// export const routeProtection = () => {
-//     const isAdmin = localStorage.getItem("@Kenzie-Empresas: admin")
-//     const userToken = localStorage.getItem("@Kenzie-Empresas: token")
-//     if(isAdmin == "yes"){
-//         location.replace("../pages/admin.html")
-//     }else if (userToken){
-//         location.replace('../pages/user.html')
-//     }
-// }
+export const userRouteProtection = (mode) => {
+    const userToken = localStorage.getItem("@uServ: userToken")
+    if (mode === "open"){
+        if (userToken){
+            location.replace('./home.html')
+        }
+    } else if (mode === "closed") {
+        if (!userToken){
+            location.replace('./login.html')
+        }
+    }
+}
 
 //
 
@@ -58,9 +61,9 @@ export const handleUsuarioHeader = () => {
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('../usuario/login.html')
+                location.replace('./usuario/login.html')
             } else if (button.innerText === 'Cadastro'){
-                location.replace('../usuario/cadastro.html')
+                location.replace('./usuario/cadastro.html')
             } else if (button.innerText === 'Home'){
                 location.replace('../../index.html')
             } else if (button.innerText === 'Logout'){

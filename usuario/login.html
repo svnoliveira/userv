@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,22 +19,29 @@
 </head>
 <body>
     <header>
-        <img src="../src/image/icons/userv-medium.png" alt="logo userv">
-        <nav id="usuario__header__nav">
-            <button>Home</button>
-            <button>Cadastro</button>
-        </nav>
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <nav id="usuario__header__nav">
+                <button class="btn--nav">Home</button>
+                <button class="btn--nav">Cadastro</button>
+            </nav>
+        </div>
     </header>
     <main>
         <section>
             <form id="user__login__form">
-                <input type="text" placeholder="Digite seu nome de Usuário">
-                <input type="password" placeholder="Digite sua Senha">
-                <button type="submit">Entrar</button>
-                <a href="./cadastro.html">Cadastrar-se</a>
+                <h1 class="font-tittle--big">Login</h1>
+                <div class="user__login__input__container">
+                    <input class="font-p-normal" type="text" placeholder="Digite seu nome de Usuário">
+                    <input class="font-p-normal" type="password" placeholder="Digite sua Senha">
+                </div>
+                <button class="btn--green--wide" type="submit">Entrar</button>
+                <a class="font-p-normal" href="./cadastro.html">Cadastrar-se</a>
             </form>
         </section>
     </main>
-    <footer>Todos Direitos reservados</footer>
+    <footer class="font-p-normal">Todos Direitos reservados</footer>
 </body>
 </html>

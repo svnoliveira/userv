@@ -129,7 +129,7 @@ button {
 }
 
 .btn--nav {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     background-color: transparent;
     transition: 1s;
@@ -137,4 +137,20 @@ button {
 
 .btn--nav:hover {
     transform: scale(1.1);
+}
+
+.btn--green--wide{
+    background-color: var(--color-brand-1);
+    color: var(--color-mode);
+    padding: 1rem 1rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+    transition: 0.5s;
+    border-radius: 999em;
+    width: 15rem;
+}
+
+.btn--green--wide:hover{
+    background-color: var(--color-brand-2);
 }

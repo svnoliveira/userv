@@ -1,5 +1,5 @@
 body {
-    background-image: url("/src/image/office3.png");
+    background-image: url("/src/image/office2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -27,7 +27,7 @@ section {
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
-#user__login__form {
+#user__register__form {
     background-color: var(--color-mode);
     border-radius: 0 6.5rem;
     display: flex;
@@ -42,41 +42,37 @@ section {
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
-#user__login__form a {
+#user__register__form a {
     color: black;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
     text-decoration: none;
 }
 
-#user__login__form a:hover {
+#user__register__form a:hover {
     text-decoration: underline;
 }
 
-.user__login__input__container {
+.user__register__input__container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-#user__login__form button{
+#user__register__form button{
     margin-right: auto;
     margin-left: auto;
 }
 
-.user__login__input__container  input{
+.user__register__input__container  input{
     border: solid var(--color-brand-2) 0.4rem;
     border-radius: 999em;
     padding: 1.8rem;
     transition: 0.7s;
 }
 
-.user__login__input__container  input:focus{
+.user__register__input__container  input:focus{
     border-color: var(--color-brand-1);
     outline: none;
-}
-
-.user__login__links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }

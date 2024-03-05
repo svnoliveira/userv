@@ -105,7 +105,7 @@ button {
 .btn--white--wide,
 .btn--white--deep {
     background-color: var(--color-mode);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.6rem;
     transition: 0.5s;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uServ | Cadastro</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/globalStyles.css">
+    <link rel="stylesheet" href="../src/styles/usuario/sharedStyles.css">
+    <link rel="stylesheet" href="../src/styles/usuario/cadastro.css">
+
+    <script type="module" src="../src/scripts/usuario/cadastro.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <nav id="usuario__header__nav">
+                <button class="btn--nav">Home</button>
+                <button class="btn--nav">Login</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <form id="user__register__form">
+                <h1 class="font-tittle--big">Cadastro</h1>
+                <div class="user__register__input__container">
+                    <input required class="font-p-normal" type="text" placeholder="Digite um nome de Usuário">
+                    <input required class="font-p-normal" type="email" placeholder="Digite um email">
+                    <input required class="font-p-normal" type="password" placeholder="Digite uma Senha">
+                    <input required class="font-p-normal" type="password" placeholder="Confirme a Senha">
+                </div>
+                <button class="btn--green--wide" type="submit">Entrar</button>
+                <a class="font-p-normal" href="./login.html">Ou faça login</a>
+            </form>
+        </section>
+    </main>
+    <footer class="font-p-normal">Todos Direitos reservados</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.hidden {
+    display: none;
+}
+
+main {
+    max-width: 140rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 92dvh;
+    background-color: var(--color-mode);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    width: 70rem;
+    height: 55rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+input{
+    border: solid var(--color-brand-1) 0.1rem;
+    border-radius: 999em;
+    padding: 1.8rem;
+    transition: 0.7s;
+}
+
+input:focus{
+    border-color: var(--color-brand-2);
+    outline: none;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+form .btn--green--wide{
+    width: 100%;
+}

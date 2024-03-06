@@ -5,11 +5,11 @@ userRouteProtection("open");
 
 const handleLogin = () => {
 
-    const loginButton = document.querySelector('form > button');
+    const loginButton = document.querySelector('form button');
     
     loginButton.addEventListener('click', async (event) => {
         event.preventDefault()
-        const inputList = document.querySelectorAll('form > input')
+        const inputList = document.querySelectorAll('form input')
         const userName = inputList[0].value
         const password = inputList[1].value
 

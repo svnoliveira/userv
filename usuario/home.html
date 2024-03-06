@@ -19,39 +19,79 @@
 </head>
 <body>
     <header>
-        <img src="../src/image/icons/userv-medium.png" alt="logo userv">
-        <nav id="usuario__header__nav">
-            <button>Logout</button>
-        </nav>
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <div class="usuario__header__location">
+                <div class="dropdown">
+                    <input class="font-p-normal" type="text" placeholder="Selecione uma localização" disabled>
+                    <script id="cityData" type="application/json"></script>
+                    <div class="dropdown-content search">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="font-p-normal dropbtn">Selecione...</div>
+                    <div class="dropdown-content uf">
+                    </div>
+                </div>
+            </div>
+            <nav id="usuario__header__nav">
+                <button class="btn--nav">Logout</button>
+            </nav>
+        </div>
     </header>
     <main>
-        <section class="usuario__search">
-            <div>
-                <h1>Fornecedores</h1>
-                <p>and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33</p>
-                <p>faça sua pesquisa entre os fornecedores cadastrados</p>
+        <section class="usuario__list__container">
+            <div class="usuario__category__list">
+                <ul>
+                    <li></li>
+                </ul>
             </div>
-            <div>
-                <input type="text" placeholder="Digite para pesquisar ente nossos fornecedores">
+            <div class="usuario__search">
+                <div>
+                    <h1>Fornecedores</h1>
+                    <p>faça sua pesquisa entre os fornecedores cadastrados</p>
+                </div>
+                <div>
+                    <input type="text" placeholder="Digite para pesquisar ente nossos fornecedores">
+                </div>
+            </div>
+            <div class="usuario__search__list">
+                <div>
+                    <button>Filtrar por Data</button>
+                    <button>Filtrar por Preço</button>
+                </div>
+                <ul>
+                    <li class="fornecedor__card">
+                        <span>Nome do Fornecedor</span>
+                        <button>Seta</button>
+                        <img src="" alt="Imagem relacionada ao fornecedor">
+                    </li>
+                </ul>
             </div>
         </section>
-        <section class="usuario__search__list">
-            <ul>
-                <li class="fornecedor__card">
-                    <span>Nome do Fornecedor</span>
-                    <button>Seta</button>
-                    <img src="" alt="Imagem relacionada ao fornecedor">
-                </li>
-            </ul>
+        <section class="usuario__filter">
+            <aside>
+                <input type="date">
+                <input type="date">
+                <select name="filter_price" id="filter_price">
+                    <option value="any">Qualquer Preço</option>
+                    <option value="250">até 250 R$</option>
+                    <option value="500">200 ~ 500 R$</option>
+                    <option value="1000">500 ~ 1000 R$</option>
+                    <option value="1000+">Acima de 1000 R$</option>
+                </select>
+            </aside>
         </section>
-        <dialog open="true">
+        <!-- <dialog open="false">
             <img src="" alt="Imagem relacionada ao fornecedor">
             <h2>Nome Do fornecedor</h2>
             <span>Telefone</span>
             <span>Email</span>
             <p>lorem Ipsum</p>
             <span>endereço</span>
-        </dialog>
+        </dialog> -->
     </main>
     <footer>Todos Direitos reservados</footer>
 </body>

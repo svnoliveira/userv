@@ -1,0 +1,80 @@
+body {
+    background-image: url("/src/image/office4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.usuario__header__location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.usuario__header__location input{
+    height: 4.5rem;
+    border: 0.2rem solid var(--color-brand-2);
+    border-radius: 999em 0 0 999em;
+    border-right: none;
+    padding: 0 2rem;
+}
+
+.dropbtn{
+    height: 4.5rem;
+    border: 0.2rem solid var(--color-brand-2);
+    border-left: none;
+    border-radius: 0 999em 999em 0;
+    padding: 0 2rem 0.3rem 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    background-color: rgba(48, 153, 107, 0.15);
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus{
+    background-color: rgba(67, 50, 142, 0.15);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+main {
+    height: 92dvh;
+    max-width: 140rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    position: relative;
+}
+
+.usuario__filter {
+    background-color: var(--color-mode);
+    width: 25%;
+}
+
+.usuario__list__container {
+    background-color: var(--color-mode);
+    width: 60%;
+}

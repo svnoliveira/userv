@@ -36,7 +36,7 @@ export const userRouteProtection = (mode) => {
     }
 }
 
-//
+//header
 
 export const handleIndexHeader = () => {
     const buttonList = document.querySelectorAll('.index__nav > button')
@@ -76,3 +76,24 @@ export const handleUsuarioHeader = () => {
         })
     });
 }
+
+//render city list for search
+
+export const renderCityList = (list) => {
+    const container = document.querySelector('.search');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
+
+    list.map((city) => {
+        const cityElement = document.createElement('p');
+        cityElement.classList.add('font-p-normal');
+        cityElement.innerText = city.nome;
+        container.appendChild(cityElement);
+        cityElement.addEventListener('click', (event) => {
+            event.preventDefault();
+            container.classList.remove('show');
+            localStorage.setItem('@userv: city', `${city.nome}`);
+        })
+    });
+};

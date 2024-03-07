@@ -25,7 +25,7 @@
             </a>
             <div class="usuario__header__location">
                 <div class="dropdown">
-                    <input class="font-p-normal" type="text" placeholder="Selecione uma localização" disabled>
+                    <input class="font-p-normal" name="location-search" type="text" placeholder="Selecione uma localização" disabled>
                     <script id="cityData" type="application/json"></script>
                     <div class="dropdown-content search">
                     </div>
@@ -73,15 +73,62 @@
         </section>
         <section class="usuario__filter">
             <aside>
-                <input type="date">
-                <input type="date">
-                <select name="filter_price" id="filter_price">
-                    <option value="any">Qualquer Preço</option>
-                    <option value="250">até 250 R$</option>
-                    <option value="500">200 ~ 500 R$</option>
-                    <option value="1000">500 ~ 1000 R$</option>
-                    <option value="1000+">Acima de 1000 R$</option>
-                </select>
+                <h2 class="font-tittle--normal">Filtros</h2>
+                <div class="range">
+                    <div class="range-slider">
+                      <span class="range-selected"></span>
+                    </div>
+                    <div class="range-input">
+                      <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="10">
+                      <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="10">
+                    </div>
+                    <div class="range-price-container">
+                        <div class="range-price">
+                          <label for="min" class="font-p-normal">Min</label>
+                          <input disabled placeholder="0" class="font-p-normal" type="number" id="min" name="min" value="300">
+                          <span class="font-p-normal">R$</span>
+                        </div>
+                        <div class="range-price">
+                            <label for="max" class="font-p-normal">Max</label>
+                            <input disabled placeholder="0" class="font-p-normal" type="number" id="max" name="max" value="700">
+                            <span class="font-p-normal">R$</span>
+                        </div>
+                    </div>
+                </div> 
+                    <ul>
+                        <li id="filter--consultancy" class="category--selected">
+                            <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
+                            <span>Consultoria</span>
+                        </li>
+                        <li id="filter--technical-assistency">
+                            <img src="../src/image/icons/category/technical-assistency.svg" alt="Ícone de chave de fenda e chave de cano">
+                            <span>Assistência Técnica</span>
+                        </li>
+                        <li id="filter--tourism">
+                            <img src="../src/image/icons/category/tourism.svg" alt="Ícone de câmera fotográfica">
+                            <span>Turismo e Viagens</span>
+                        </li>
+                        <li id="filter--healthcare">
+                            <img src="../src/image/icons/category/healthcare.svg" alt="Ícone de dois corações">
+                            <span>Serviços de saúde</span>
+                        </li>
+                        <li id="filter--finnancial">
+                            <img src="../src/image/icons/category/finnancial.svg" alt="Ícone de um quadro com gráfico apontando para cima">
+                            <span>Serviços finaceiros</span>
+                        </li>
+                        <li id="filter--marketing">
+                            <img src="../src/image/icons/category/marketing.svg" alt="Ícone de uma revista aberta">
+                            <span>Marketing e Publicidade</span>
+                        </li>
+                        <li id="filter--cleaning">
+                            <img src="../src/image/icons/category/cleaning.svg" alt="Ícone de uma lata de lixo">
+                            <span>Limpeza e manutenção</span>
+                        </li>
+                        <li id="filter--transportation">
+                            <img src="../src/image/icons/category/transportation.svg" alt="Ícone de um avião">
+                            <span>Transporte e logística</span>
+                        </li>
+                    </ul>
             </aside>
         </section>
         <!-- <dialog open="false">

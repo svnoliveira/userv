@@ -1,6 +1,37 @@
 import { brazilianStates } from "../../data/states.js";
-import { renderCityList } from "../render.js";
 import { getCitiesFromUF } from "./requests.js";
+
+export const renderSupplierList = () => {
+  const userCity = localStorage.getItem("@userv: city") || "";
+  const location = document.getElementById("usuario__search__location");
+
+  if (userCity.length > 0) {
+    location.innerText = userCity;
+  }
+};
+
+const renderCityList = (list) => {
+  const container = document.querySelector(".search");
+  const input = document.querySelector(".dropdown input");
+
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
+  list.map((city) => {
+    const cityElement = document.createElement("p");
+    cityElement.classList.add("font-p-normal");
+    cityElement.innerText = city.nome;
+    container.appendChild(cityElement);
+    cityElement.addEventListener("click", (event) => {
+      event.preventDefault();
+      container.classList.remove("show");
+      localStorage.setItem("@userv: city", `${city.nome}`);
+      input.value = city.nome;
+      renderSupplierList();
+    });
+  });
+};
 
 export const handleUFSelector = () => {
   const dropdownButton = document.querySelector(".dropbtn");
@@ -107,6 +138,29 @@ export const handleCategoryFilters = () => {
     category.addEventListener("click", (event) => {
       event.preventDefault();
       category.classList.toggle("category--selected");
+    });
+  });
+};
+
+export const handleSearchButtons = () => {
+  const clearButton = document.getElementById('clear-button');
+  const location = document.getElementById("usuario__search__location");
+  const sortButtons = document.querySelectorAll('#usuario__search__sort button');
+  const alphabetical = sortButtons[0];
+  const price = sortButtons[1];
+
+  clearButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.removeItem("@userv: city");
+    location.innerText = 'Todo Brasil'
+    renderSupplierList();
+  });
+
+  sortButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      alphabetical.classList.toggle('sort--selected');
+      price.classList.toggle('sort--selected');
     });
   });
 };

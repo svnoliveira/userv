@@ -1,24 +1,25 @@
 @font-face {
     font-family: Omnes;
     src: url(/src/font/Omnes\ SemiBold.ttf);
+    font-weight: bold;
 }
 
 @font-face {
     font-family: Omnes;
     src: url(/src/font/Omnes\ Black.ttf);
-    font-weight: black;
+    font-weight: bolder;
 }
 
 @font-face {
     font-family: Omnes;
     src: url(/src/font/Omnes\ Light.ttf);
-    font-weight: light;
+    font-weight: 400;
 }
 
 @font-face {
     font-family: Omnes;
     src: url(/src/font/Omnes\ Thin.ttf);
-    font-weight: thin;
+    font-weight: 100;
 }
 
 :root{
@@ -80,21 +81,27 @@ button{
 /* fonts */
 .font-tittle--big {
     font-size: 5.8rem;
-    font-weight: black;
+    font-weight: bold;
 }
 
 .font-tittle--normal {
     font-size: 2.2rem;
-    font-weight: black;
+    font-weight: bold;
 }
 
 .font-tag {
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .font-p-normal {
     font-size: 1.8rem;
+    font-weight: 100;
+}
+
+.font-p-normal--solid {
+    font-size: 1.8rem;
+    font-weight: 400;
 }
 
 /* buttons */
@@ -106,7 +113,7 @@ button {
 .btn--white--deep {
     background-color: var(--color-mode);
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 1.6rem;
     transition: 0.5s;
     border-radius: 999em;
@@ -145,7 +152,7 @@ button {
     padding: 1rem 1rem;
     font-size: 1.8rem;
     line-height: 1.8rem;
-    font-weight: bold;
+    font-weight: 400;
     transition: 0.5s;
     border-radius: 999em;
     width: 15rem;
@@ -153,4 +160,20 @@ button {
 
 .btn--green--wide:hover{
     background-color: var(--color-brand-2);
+}
+
+.btn--blue--small {
+    font-size: 1.8rem;
+    font-weight: 400;
+    background-color: transparent;
+    padding: 0.5rem 0 0.8rem 0;
+    border: 0.1rem rgba(48,153,107,0.1) solid;
+    border-radius: 0.5rem;
+    line-height: 1.6rem;
+    width: 7rem;
+    transition: 0.5s;
+}
+
+.btn--blue--small:hover {
+    border: 0.1rem var(--color-brand-2) solid;
 }

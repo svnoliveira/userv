@@ -50,23 +50,44 @@
             </div>
             <div class="usuario__search">
                 <div>
-                    <h1>Fornecedores</h1>
-                    <p>faça sua pesquisa entre os fornecedores cadastrados</p>
+                    <h1 class="font-tittle--big">Fornecedores</h1>
+                    <p class="font-p-normal">Faça sua pesquisa entre os fornecedores cadastrados</p>
                 </div>
                 <div>
-                    <input type="text" placeholder="Digite para pesquisar ente nossos fornecedores">
+                    <input class="font-p-normal" type="text" placeholder="Digite para pesquisar entre nossos fornecedores">
                 </div>
             </div>
-            <div class="usuario__search__list">
-                <div>
-                    <button>Filtrar por Data</button>
-                    <button>Filtrar por Preço</button>
+            <div>
+                <div class="usuario__search__header">
+                    <div>
+                        <h2 class="font-tittle--normal">Resultados para : <span class="font-tittle--normal" id="usuario__search__location">Todo Brasil</span></h2>
+                        <button id="clear-button" class="btn--blue--small">Limpar</button>
+                    </div>
+                    <div id="usuario__search__sort">
+                        <button class="btn--blue--small sort--selected">A - Z</button>
+                        <button class="btn--blue--small">Preço</button>
+                    </div>
                 </div>
-                <ul>
+                <ul class="usuario__search__list">
                     <li class="fornecedor__card">
-                        <span>Nome do Fornecedor</span>
-                        <button>Seta</button>
-                        <img src="" alt="Imagem relacionada ao fornecedor">
+                        <img src="../src/image/fornecedores/base-thumbnail.png" alt="Imagem relacionada ao fornecedor">
+                        <div class="fornecedor__card__text-box">
+                            <h3 class="font-tittle--normal">Nome do Fornecedor</h3>
+                            <div class="fornecedor__card__price">
+                                <span class="font-p-normal">Preço inicial: </span><span class="font-p-normal">99.99</span><span class="font-p-normal">R$</span>
+                            </div>
+                            <div class="fornecedor__card__detail">
+                                <p class="font-p-normal">Cidade, Endereço</p>
+                                <div class="fornecedor__card__category">
+                                    <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
+                                    <span>Consultoria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fornecedor__card__rating">
+                            <img class="star" src="../src/image/icons/star.svg" alt="Ícone de estrela">
+                            <span class="font-p-normal--solid">5</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -96,7 +117,7 @@
                     </div>
                 </div> 
                     <ul>
-                        <li id="filter--consultancy" class="category--selected">
+                        <li id="filter--consultancy">
                             <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
                             <span>Consultoria</span>
                         </li>

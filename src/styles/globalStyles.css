@@ -1,24 +1,24 @@
 @font-face {
     font-family: Omnes;
-    src: url(/userv/src/font/Omnes\ SemiBold.ttf);
+    src: url("../font/Omnes\ SemiBold.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: Omnes;
-    src: url(/userv/src/font/Omnes\ Black.ttf);
+    src: url("../font/Omnes\ Black.ttf");
     font-weight: bolder;
 }
 
 @font-face {
     font-family: Omnes;
-    src: url(/userv/src/font/Omnes\ Light.ttf);
+    src: url("../font/Omnes\ Light.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: Omnes;
-    src: url(/userv/src/font/Omnes\ Thin.ttf);
+    src: url("../font/Omnes\ Thin.ttf");
     font-weight: 100;
 }
 

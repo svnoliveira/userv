@@ -63,9 +63,9 @@ export const handleUsuarioHeader = () => {
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('./usuario/login.html')
+                location.replace('../login.html')
             } else if (button.innerText === 'Cadastro'){
-                location.replace('./usuario/cadastro.html')
+                location.replace('../usuario/cadastro.html')
             } else if (button.innerText === 'Home'){
                 location.replace('../../index.html')
             } else if (button.innerText === 'Logout'){

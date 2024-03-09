@@ -1,13 +1,135 @@
 import { brazilianStates } from "../../data/states.js";
+import { supplierList } from "../../data/suppliers.js";
+import { getCategoryImageInfo } from "../render.js";
 import { getCitiesFromUF } from "./requests.js";
 
 export const renderSupplierList = () => {
+  //filter by city
   const userCity = localStorage.getItem("@userv: city") || "";
   const location = document.getElementById("usuario__search__location");
 
+  let filteredList = supplierList; //usando dados mockados, adicionar integração a API
+
   if (userCity.length > 0) {
     location.innerText = userCity;
+    filteredList = filteredList.filter(
+      (supplier) => supplier.address.city === userCity
+    );
   }
+
+  //filter by category
+  const categoryList = document.querySelectorAll(".category--selected span");
+  if (categoryList.length > 0) {
+    let newList = [];
+    categoryList.forEach((category) => {
+      filteredList.map((supplier) => {
+        if (category.innerText === supplier.category) {
+          newList.push(supplier);
+        }
+      });
+    });
+    filteredList = newList;
+  }
+
+  //filter by price
+  const rangePrice = document.querySelectorAll(".range-price input");
+  const minPrice = rangePrice[0].value;
+  const maxPrice = rangePrice[1].value;
+
+  filteredList = filteredList.filter(
+    (supplier) =>
+      supplier.startingPrice >= minPrice && supplier.startingPrice <= maxPrice
+  );
+
+  //filter by input
+  const input = document.querySelector("#usuario__search__box input");
+  if (input.value.length > 0) {
+    filteredList = filteredList.filter((supplier) =>
+      supplier.fantasyName.toLowerCase().includes(input.value.toLowerCase())
+    );
+  }
+
+  //sort functions
+  const sortOption = document.querySelector(".sort--selected").innerText;
+  if (sortOption === "Preço") {
+    filteredList.sort((a, b) => a.startingPrice - b.startingPrice);
+  } else {
+    filteredList.sort((a, b) => a.fantasyName.localeCompare(b.fantasyName));
+  }
+
+  const listContainer = document.querySelector(".usuario__search__list");
+
+  while (listContainer.firstChild) {
+    listContainer.removeChild(listContainer.firstChild);
+  }
+
+  if (filteredList.length < 1) {
+    const card = document.createElement("li");
+    const message = document.createElement("p");
+
+    message.classList.add("font-p-normal--solid", "fornecedor__card__empty");
+    message.innerText = "Nenhum fornecedor encontrado.";
+    card.appendChild(message);
+    listContainer.appendChild(card);
+    return;
+  } else {
+    let BRReal = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    filteredList.map((supplier) => {
+      const card = document.createElement("li");
+      const image = document.createElement("img");
+      const textBox = document.createElement("div");
+      const name = document.createElement("h3");
+      const priceContainer = document.createElement("div");
+      const priceCall = document.createElement("span");
+      const price = document.createElement("span");
+      const detailContainer = document.createElement("div");
+      const address = document.createElement("p");
+      const categoryContainer = document.createElement("div");
+      const categoryImg = document.createElement("img");
+      const categoryName = document.createElement("span");
+      const ratingContainer = document.createElement("div");
+      const star = document.createElement("img");
+      const rating = document.createElement("span");
+
+      card.classList.add("fornecedor__card");
+      image.src = supplier.image;
+      image.alt = `Logo ou imagem da empresa ${supplier.fantasyName}`;
+      textBox.classList.add("fornecedor__card__text-box");
+      name.classList.add("font-tittle--normal");
+      name.innerText = supplier.fantasyName;
+      priceContainer.classList.add("fornecedor__card__price");
+      priceCall.classList.add("font-p-normal");
+      priceCall.innerText = "Preço inicial: ";
+      price.classList.add("font-p-normal");
+      price.innerText = BRReal.format(supplier.startingPrice);
+      detailContainer.classList.add("fornecedor__card__detail");
+      address.classList.add("font-p-normal");
+      address.innerText = `${supplier.address.city} - ${supplier.address.uf}`;
+      categoryContainer.classList.add("fornecedor__card__category");
+      categoryImg.src = getCategoryImageInfo("src", supplier.category);
+      categoryImg.alt = getCategoryImageInfo("alt", supplier.category);
+      categoryName.innerText = supplier.category;
+      ratingContainer.classList.add("fornecedor__card__rating");
+      star.classList.add("star");
+      star.src = "../src/image/icons/star.svg";
+      star.alt = "Ícone de uma estrela";
+      rating.classList.add("font-p-normal--solid");
+      rating.innerText = "5"; //adicionar chave de avaliação do fornecedor
+
+      listContainer.appendChild(card);
+      card.append(image, textBox, ratingContainer);
+      textBox.append(name, priceContainer, detailContainer);
+      priceContainer.append(priceCall, price);
+      detailContainer.append(address, categoryContainer);
+      categoryContainer.append(categoryImg, categoryName);
+      ratingContainer.append(star, rating);
+    });
+  }
+  return;
 };
 
 const renderCityList = (list) => {
@@ -94,6 +216,7 @@ export const handlePriceRange = () => {
   const range = document.querySelector(".range-selected");
   const rangeInput = document.querySelectorAll(".range-input input");
   const rangePrice = document.querySelectorAll(".range-price input");
+  const filterButton = document.querySelector(".range > button");
 
   rangeInput.forEach((input) => {
     input.addEventListener("input", (e) => {
@@ -129,6 +252,11 @@ export const handlePriceRange = () => {
       }
     });
   });
+
+  filterButton.addEventListener("click", (event) => {
+    renderSupplierList();
+    event.preventDefault();
+  });
 };
 
 export const handleCategoryFilters = () => {
@@ -138,29 +266,49 @@ export const handleCategoryFilters = () => {
     category.addEventListener("click", (event) => {
       event.preventDefault();
       category.classList.toggle("category--selected");
+      renderSupplierList();
     });
   });
 };
 
 export const handleSearchButtons = () => {
-  const clearButton = document.getElementById('clear-button');
+  const clearButton = document.getElementById("clear-button");
   const location = document.getElementById("usuario__search__location");
-  const sortButtons = document.querySelectorAll('#usuario__search__sort button');
+  const sortButtons = document.querySelectorAll(
+    "#usuario__search__sort button"
+  );
   const alphabetical = sortButtons[0];
   const price = sortButtons[1];
+  const input = document.querySelector("#usuario__search__box input");
+  const searchButton = document.querySelector("#usuario__search__box button");
 
-  clearButton.addEventListener('click', (event) => {
+  clearButton.addEventListener("click", (event) => {
     event.preventDefault();
     localStorage.removeItem("@userv: city");
-    location.innerText = 'Todo Brasil'
+    location.innerText = "Todo Brasil";
+    input.value = "";
     renderSupplierList();
   });
 
   sortButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
+    button.addEventListener("click", (event) => {
       event.preventDefault();
-      alphabetical.classList.toggle('sort--selected');
-      price.classList.toggle('sort--selected');
+      if (!button.classList.contains("sort--selected")) {
+        alphabetical.classList.toggle("sort--selected");
+        price.classList.toggle("sort--selected");
+        renderSupplierList();
+      }
     });
   });
+
+  searchButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    renderSupplierList();
+  });
+
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      renderSupplierList();
+    };
+  });  
 };

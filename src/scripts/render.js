@@ -1,5 +1,7 @@
 // general functions
 
+import { categories } from "../data/categories.js";
+
 export const toast = (color, message) => {
     const red = '#FF5630';
     const green = '#36B37E';
@@ -75,4 +77,12 @@ export const handleUsuarioHeader = () => {
             }
         })
     });
-}
+};
+
+export const getCategoryImageInfo = (mode, name) => {
+    const foundCategory = categories.find((category) => category.name == name);
+    if (foundCategory){
+        return mode === 'src' ? foundCategory.src : foundCategory.alt;
+    }
+    return '';
+};

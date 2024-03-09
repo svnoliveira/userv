@@ -118,6 +118,8 @@ aside h2 {
 
 .range {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 78%;
 }
 
@@ -195,12 +197,22 @@ aside h2 {
     text-align: right;
 }
 
+.range button {
+    width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 aside ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
     justify-content: center;
+}
+
+.fornecedor__card__empty {
+    text-align: center;
 }
 
 .fornecedor__card__category,
@@ -237,11 +249,32 @@ aside ul img {
     gap: 1rem;
 }
 
-.usuario__search input {
-    width: 80%;
+#usuario__search__box{
+    display: flex;
+}
+
+#usuario__search__box input {
+    width: 60%;
     padding: 1.2rem 1rem;
     border: 0.2rem var(--color-brand-1) solid;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+    border-right: none;
+}
+
+#usuario__search__box button {
+    width: 20%;
+    padding: 1.2rem 1rem;
+    border: 0.2rem var(--color-brand-1) solid;
+    border-radius: 0 1.5rem 1.5rem 0;
+    border-left: none;
+    font-weight: 400;
+    font-size: 1.8rem;
+    background-color: rgba(48, 153, 107, 0.15);
+    cursor: pointer;
+}
+
+#usuario__search__box button:hover {
+    background-color: rgba(67, 50, 142, 0.15);
 }
 
 .usuario__search input:focus {
@@ -265,6 +298,8 @@ aside ul img {
 
 .usuario__search__list {
     width: 80%;
+    height: 60dvh;
+    overflow-y: auto;
     margin: 1rem 0;
     display: flex;
     flex-direction: column;

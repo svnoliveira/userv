@@ -43,18 +43,14 @@
     </header>
     <main>
         <section class="usuario__list__container">
-            <div class="usuario__category__list">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
             <div class="usuario__search">
                 <div>
                     <h1 class="font-tittle--big">Fornecedores</h1>
                     <p class="font-p-normal">Faça sua pesquisa entre os fornecedores cadastrados</p>
                 </div>
-                <div>
+                <div id="usuario__search__box">
                     <input class="font-p-normal" type="text" placeholder="Digite para pesquisar entre nossos fornecedores">
+                    <button>Pesquisar</button>
                 </div>
             </div>
             <div>
@@ -69,12 +65,12 @@
                     </div>
                 </div>
                 <ul class="usuario__search__list">
-                    <li class="fornecedor__card">
+                    <!-- <li class="fornecedor__card">
                         <img src="../src/image/fornecedores/base-thumbnail.png" alt="Imagem relacionada ao fornecedor">
                         <div class="fornecedor__card__text-box">
                             <h3 class="font-tittle--normal">Nome do Fornecedor</h3>
                             <div class="fornecedor__card__price">
-                                <span class="font-p-normal">Preço inicial: </span><span class="font-p-normal">99.99</span><span class="font-p-normal">R$</span>
+                                <span class="font-p-normal">Preço inicial: </span><span class="font-p-normal">99.99R$</span>
                             </div>
                             <div class="fornecedor__card__detail">
                                 <p class="font-p-normal">Cidade, Endereço</p>
@@ -88,7 +84,7 @@
                             <img class="star" src="../src/image/icons/star.svg" alt="Ícone de estrela">
                             <span class="font-p-normal--solid">5</span>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </section>
@@ -100,8 +96,8 @@
                       <span class="range-selected"></span>
                     </div>
                     <div class="range-input">
-                      <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="10">
-                      <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="10">
+                      <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="50">
+                      <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="50">
                     </div>
                     <div class="range-price-container">
                         <div class="range-price">
@@ -115,6 +111,7 @@
                             <span class="font-p-normal">R$</span>
                         </div>
                     </div>
+                    <button class="btn--blue--normal">Filtrar por Preço</button>
                 </div> 
                     <ul>
                         <li id="filter--consultancy">
@@ -161,6 +158,6 @@
             <span>endereço</span>
         </dialog> -->
     </main>
-    <footer>Todos Direitos reservados</footer>
+    <footer class="font-p-normal--solid">Todos Direitos reservados</footer>
 </body>
 </html>

@@ -86,3 +86,20 @@ export const getCategoryImageInfo = (mode, name) => {
     }
     return '';
 };
+
+ export const formatPhoneNumber = (phoneNumber) => {
+    const areaCode = phoneNumber.slice(0, 2);
+    const firstDigit = phoneNumber.slice(2, 3);
+    const middleDigits = phoneNumber.slice(3, 7);
+    const lastDigits = phoneNumber.slice(7);
+  
+    return `(${areaCode}) ${firstDigit} ${middleDigits} - ${lastDigits}`;
+}
+
+export const formatPrice = (number) => {
+    let BRReal = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+    });
+    return BRReal.format(number);
+};

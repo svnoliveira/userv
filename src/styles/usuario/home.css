@@ -314,6 +314,7 @@ aside ul img {
     gap: 1rem;
     height: 16.7rem;
     position: relative;
+    cursor: pointer;
 }
 
 .fornecedor__card > img{
@@ -361,4 +362,85 @@ aside ul img {
 
 footer {
     color: black;
+}
+
+/* //modal */
+#modal__controller {
+    position: fixed;
+
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+#modal__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    height: 53.563rem;
+    width: min(39.813rem, 90%);
+    background-color: var(--color-mode);
+    padding: 2.438rem 2.688rem;
+    border-radius: 1.5rem;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.modal__header button{
+    width: 2.8rem;
+}
+
+.modal__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.modal__info > img {
+    border-radius: 1.2rem;
+    height: 15rem;
+    width: 15rem;
+    margin-right: 0.4rem;
+}
+
+.modal__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    text-align: right;
+}
+
+.modal__services {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.modal__services .price{
+    color: var(--color-brand-2);
+}
+
+.modal__services ul {
+    display: flex;
+    flex-direction: column;
+    max-height: 17rem;
+    overflow-y: auto;
+    gap: 0.1rem;
+}
+
+.modal__services li {
+    padding: 0.2rem;
+    border: solid 0.1rem rgba(48, 153, 107, 0.15);
+    cursor: default;
+}
+
+.modal__services li:hover {
+    background-color: rgba(48, 153, 107, 0.15);
 }

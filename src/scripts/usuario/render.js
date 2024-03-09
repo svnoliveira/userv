@@ -1,7 +1,50 @@
 import { brazilianStates } from "../../data/states.js";
 import { supplierList } from "../../data/suppliers.js";
-import { getCategoryImageInfo } from "../render.js";
+import { formatPhoneNumber, formatPrice, getCategoryImageInfo } from "../render.js";
 import { getCitiesFromUF } from "./requests.js";
+
+
+export const renderModal = (supplier) => {
+  const modal = document.querySelector('#modal__controller');
+  const name = document.querySelector('.modal__header > h2');
+  const xButton = document.querySelector('.modal__header > button');
+  const image = document.querySelector('.modal__info > img');
+  const phone = document.querySelector('.modal__info .phone');
+  const email = document.querySelector('.modal__info .email');
+  const address = document.querySelector('.modal__info .address');
+  const price = document.querySelector('.modal__services > .price');
+  const serviceList = document.querySelector('.modal__services ul');
+
+  name.innerText = supplier.fantasyName;
+  image.src = supplier.image;
+  phone.innerText = formatPhoneNumber(supplier.phone);
+  email.innerText = supplier.email;
+  address.innerText = `${supplier.address.city}, ${supplier.address.uf}`;
+  price.innerText = `Preços à partir de ${formatPrice(supplier.startingPrice)}`;
+
+  while (serviceList.firstChild) {
+    serviceList.removeChild(serviceList.firstChild);
+  };
+
+  supplier.services.map((service) => {
+    const newService = document.createElement('li');
+    newService.classList.add('font-p-normal');
+    newService.innerText = service.entry;
+    serviceList.append(newService);
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+      event.stopPropagation();
+    }
+  });
+
+  xButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    modal.close();
+  });
+};
 
 export const renderSupplierList = () => {
   //filter by city
@@ -59,10 +102,11 @@ export const renderSupplierList = () => {
 
   const listContainer = document.querySelector(".usuario__search__list");
 
+  //clear the list
   while (listContainer.firstChild) {
     listContainer.removeChild(listContainer.firstChild);
   }
-
+  //render filtered list
   if (filteredList.length < 1) {
     const card = document.createElement("li");
     const message = document.createElement("p");
@@ -73,10 +117,6 @@ export const renderSupplierList = () => {
     listContainer.appendChild(card);
     return;
   } else {
-    let BRReal = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
 
     filteredList.map((supplier) => {
       const card = document.createElement("li");
@@ -105,7 +145,7 @@ export const renderSupplierList = () => {
       priceCall.classList.add("font-p-normal");
       priceCall.innerText = "Preço inicial: ";
       price.classList.add("font-p-normal");
-      price.innerText = BRReal.format(supplier.startingPrice);
+      price.innerText = formatPrice(supplier.startingPrice);
       detailContainer.classList.add("fornecedor__card__detail");
       address.classList.add("font-p-normal");
       address.innerText = `${supplier.address.city} - ${supplier.address.uf}`;
@@ -127,8 +167,15 @@ export const renderSupplierList = () => {
       detailContainer.append(address, categoryContainer);
       categoryContainer.append(categoryImg, categoryName);
       ratingContainer.append(star, rating);
+
+      card.addEventListener('click', (event) =>{
+        event.preventDefault();
+        const modal = document.querySelector('#modal__controller');
+        renderModal(supplier);
+        modal.showModal();
+      });
     });
-  }
+  };
   return;
 };
 
@@ -227,7 +274,7 @@ export const handlePriceRange = () => {
           rangeInput[0].value = maxRange - rangeMin;
         } else {
           rangeInput[1].value = minRange + rangeMin;
-        }
+        };
       } else {
         rangePrice[0].value = minRange;
         rangePrice[1].value = maxRange;
@@ -248,8 +295,8 @@ export const handlePriceRange = () => {
         } else {
           rangeInput[1].value = maxPrice;
           range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-        }
-      }
+        };
+      };
     });
   });
 

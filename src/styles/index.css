@@ -1,5 +1,5 @@
 body {
-    background-image: url("/userv/image/office.png");
+    background-image: url("/userv/src/image/office.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -34,13 +34,13 @@ header .contact-btn {
 #index__header__logo-container {
     height: 3.5rem;
     width: 3.5rem;
-    background-image: url("/userv/image/icons/userv.png");
+    background-image: url("/userv/src/image/icons/userv.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 #index__header__logo-container:hover {
-    background-image: url("/userv/image/icons/userv-bright.png");
+    background-image: url("/userv/src/image/icons/userv-bright.png");
     transform: scale(1.04);
 }
 
@@ -80,14 +80,14 @@ main {
     height: 20em;
     display: flex;
     align-items: center;
-    background-image: url("/userv/image/icons/userv-full.png");
+    background-image: url("/userv/src/image/icons/userv-full.png");
     background-size: contain;
     background-repeat: no-repeat;
     transition: 0.5s;
 }
 
 #index__text__logo-container:hover {
-    background-image: url("/userv/image/icons/userv-full-bright.png");
+    background-image: url("/userv/src/image/icons/userv-full-bright.png");
     transform: scale(1.04);
 }
 

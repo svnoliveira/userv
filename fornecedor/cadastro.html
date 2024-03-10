@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uServ | Cadastro de Fornecedor</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="stylesheet" href="../src/styles/reset.css">
+  <link rel="stylesheet" href="../src/styles/globalStyles.css">
+  <link rel="stylesheet" href="../src/styles/fornecedor/sharedStyles.css">
+  <link rel="stylesheet" href="../src/styles/fornecedor/cadastro.css">
+
+  <script type="module" src="../src/scripts/fornecedor/cadastro.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="../index.html">
+        <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+      </a>
+      <nav id="supplier__header__nav">
+        <button class="btn--nav">Home</button>
+        <button class="btn--nav">Login</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="supplier__title">
+      <h1 class="font-tittle--big">Cadastrar Fornecedor</h1>
+    </section>
+    <form id="supplier__form">
+      <div class="supplier__register step-1 show">
+        <ol class="steps-wizard">
+          <li class="active"></li>
+          <li class=""></li>
+          <li class=""></li>
+          <li class=""></li>
+        </ol>
+        <p class="font-p-normal">Informações do administrador:</p>
+        <div>
+          <input class="font-p-normal" required type="text" placeholder="Digite seu Nome Completo">
+          <input class="font-p-normal" required type="email" placeholder="Digite um e-mail">
+          <input class="font-p-normal" required type="text" placeholder="Telefone para Contato">
+          <input class="font-p-normal" required type="password" placeholder="Digite uma senha">
+          <input class="font-p-normal" required type="password" placeholder="Confirme a senha">
+          <button id="supplier--button-step1" class="btn--green--wide" type="submit">Continuar</button>
+        </div>
+      </div>
+
+      <div class="supplier__register step-2 hidden">
+        <ol class="steps-wizard">
+          <li class="done"></li>
+          <li class="active"></li>
+          <li class=""></li>
+          <li class=""></li>
+        </ol>
+        <div>
+          <p class="font-p-normal">Informações da Empresa:</p>
+          <label class="font-label--green" for="register__document">Tipo de Documento</label>
+          <select name="register__document" class="font-p-normal" id="register__document">
+            <option class="font-p-normal" value="default">....</option>
+            <option class="font-p-normal" value="cnpj">CNPJ</option>
+            <option class="font-p-normal" value="cpf">CPF</option>
+          </select>
+          <label class="font-label--green" for="register__document--input">CPF</label>
+          <input id="register__document--input" class="font-p-normal" required type="text"
+            placeholder="Digite o número do seu documento">
+          <label class="font-label--green" for="register__document--name">Nome da Empresa</label>
+          <input id="register__document--name" class="font-p-normal" required type="text"
+            placeholder="Digite o número do documento primeiro">
+          <label class="font-label--green" for="register__document--fantasy">Qual nome aparecerá no App?</label>
+          <input id="register__document--fantasy" class="font-p-normal" required type="text"
+            placeholder="ex.: Mercado do Jõao ou nome Fantasia">
+          <label class="font-label--green" for="register__document--cpf">CPF do(a) Representante</label>
+          <input id="register__document--cpf" class="font-p-normal" required type="text" placeholder="000.000.000-00">
+          <label class="font-label--green" for="register__document--category">Segmento de Atuação</label>
+          <select name="register__document--category" id="register__document--category" class="font-p-normal">
+            <option class="font-p-normal" value="Consultoria">Consultoria</option>
+            <option class="font-p-normal" value="Assistência Técnica">Assistência Técnica</option>
+            <option class="font-p-normal" value="Turismo e Viagens">Turismo e Viagens</option>
+            <option class="font-p-normal" value="Serviços de saúde">Serviços de saúde</option>
+            <option class="font-p-normal" value="Serviços finaceiros">Serviços finaceiros</option>
+            <option class="font-p-normal" value="Marketing e Publicidade">Marketing e Publicidade</option>
+            <option class="font-p-normal" value="Limpeza e manutenção">Limpeza e manutenção</option>
+            <option class="font-p-normal" value="Transporte e logística">Transporte e logística</option>
+          </select>
+          <div class="supplier__terms">
+            <input class="font-small--normal"  type="checkbox" id="register__document--contract">
+            <span class="font-small--normal">Li e concordo com o Termo de Uso e Política de Privacidade.</span>
+            <span class="font-small--blue">clique aqui para ler.</span>
+          </div>
+          <label for="supplier__fileInput" id="custom-file-upload">
+            <input type="file" id="supplier__fileInput" accept=".jpg, .jpeg, .png, .gif">
+            <img src="../src/image/icons/cloud.svg" alt="Ícone de uma núvem com símbolo de upload">
+            <p class="font-tag"><b class="font-tag--bold">Carregar imagem da Logo</b> ou arraste e solte</p>
+            <p class="font-tag">PNG, JPG ou GIF, (max 2mb)</p>
+          </label>
+          <label for="supplier__docInput" id="custom-doc-upload">
+            <input type="file" id="supplier__docInput" accept=".jpg, .jpeg, .png, .gif">
+            <img src="../src/image/icons/cloud.svg" alt="Ícone de uma núvem com símbolo de upload">
+            <p class="font-tag"><b class="font-tag--bold">Carregar certidão negativa de débitos (CDN Federal)</b> ou arraste e solte</p>
+            <p class="font-tag">PNG, JPG ou GIF, (max 2mb)</p>
+          </label>
+          <button id="supplier--button-step2" class="btn--green--wide" type="submit">Continuar</button>
+        </div>
+      </div>
+
+      <div class="supplier__register step-3 hidden">
+        <ol class="steps-wizard">
+          <li class="done"></li>
+          <li class="done"></li>
+          <li class="active"></li>
+          <li class=""></li>
+        </ol>
+        <div>
+          <p class="font-p-normal">Endereço:</p>
+          <label class="font-label--green" for="register__address--cep">CEP</label>
+          <input id="register__address--cep" class="font-p-normal" required type="text" placeholder="00.000-000">
+          <label class="font-label--green" for="register__address--street">Logadouro</label>
+          <input id="register__address--street" class="font-p-normal" required type="text"
+            placeholder="Rua, Avenida, etc.">
+          <label class="font-label--green" for="register__address--number">Número</label>
+          <input id="register__address--number" class="font-p-normal" required type="text" placeholder="Número">
+          <label class="font-label--green" for="register__address--complement">Complemento</label>
+          <input id="register__address--complement" class="font-p-normal" required type="text"
+            placeholder="Complemento">
+          <label class="font-label--green" for="register__address--neighbornhood">Bairro</label>
+          <input id="register__address--neighbornhood" class="font-p-normal" required type="text" placeholder="Bairro">
+          <label class="font-label--green" for="register__address--city">Cidade</label>
+          <input id="register__address--city" class="font-p-normal" required type="text" placeholder="Cidade">
+          <label class="font-label--green" for="register__address--uf">Estado</label>
+          <input id="register__address--uf" class="font-p-normal" required type="text" placeholder="Estado">
+          <button id="supplier--button-step3" class="btn--green--wide" type="submit">Continuar</button>
+        </div>
+      </div>
+    </form>
+    <div class="supplier__register step-4 hidden">
+      <ol class="steps-wizard">
+        <li class="done"></li>
+        <li class="done"></li>
+        <li class="done"></li>
+        <li class="active"></li>
+      </ol>
+      <p class="font-p-normal">Planos:</p>
+      <div class="supplier__plan__container">
+        <div class="plan-card" id="card--basic">
+          <div>
+            <h2 class="font-tittle--normal">Plano Básico</h2>
+            <p class="font-p-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <h3 class="font-tag--bold">Vantagens:</h3>
+            <ul>
+              <li class="font-p-normal--solid">serviço 1</li>
+              <li class="font-p-normal--solid">serviço 2</li>
+              <li class="font-p-normal--solid">serviço 3</li>
+              <li class="font-p-normal--solid">serviço 4</li>
+            </ul>
+          </div>
+          <span class="font-tittle--normal">R$ 120,00</span>
+          <button id="plan-btn--basic" class="btn--green--wide" type="submit">Selecionar</button>
+        </div>
+        <div class="plan-card" id="card--advanced">
+          <h2 class="font-tittle--normal">Plano Avançado</h2>
+          <p class="font-p-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <h3 class="font-tag--bold">Vantagens:</h3>
+          <ul>
+            <li class="font-p-normal--solid">serviço 1</li>
+            <li class="font-p-normal--solid">serviço 2</li>
+            <li class="font-p-normal--solid">serviço 3</li>
+            <li class="font-p-normal--solid">serviço 4</li>
+          </ul>
+          <span class="font-tittle--normal">R$ 150,00</span>
+          <button id="plan-btn--advanced" class="btn--green--wide" type="submit">Selecionar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

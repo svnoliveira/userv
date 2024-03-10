@@ -12,10 +12,10 @@
 
     <link rel="stylesheet" href="../src/styles/reset.css">
     <link rel="stylesheet" href="../src/styles/globalStyles.css">
-    <link rel="stylesheet" href="../src/styles/usuario/sharedStyles.css">
-    <link rel="stylesheet" href="../src/styles/usuario/recuperar-senha.css">
+    <link rel="stylesheet" href="../src/styles/fornecedor/sharedStyles.css">
+    <link rel="stylesheet" href="../src/styles/fornecedor/recuperar-senha.css">
 
-    <script type="module" src="../src/scripts/usuario/recuperar-senha.js" defer></script>
+    <script type="module" src="../src/scripts/fornecedor/recuperar-senha.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,9 +23,9 @@
             <a href="../index.html">
                 <img src="../src/image/icons/userv-medium.png" alt="logo userv">
             </a>
-            <nav id="usuario__header__nav">
+            <nav id="supplier__header__nav">
                 <button class="btn--nav">Home</button>
-                <button class="btn--nav">Cadastro</button>
+                <button class="btn--nav">Cadastrar Forncecedor</button>
                 <button class="btn--nav">Login</button>
             </nav>
         </div>
@@ -33,15 +33,15 @@
     <main>
         <form name="recovery">
             <h1 class="font-tittle--big">Recuperar senha</h1>
-            <div class="user__password step-1 show">
+            <div class="supplier__password step-1 show">
                 <p class="font-p-normal">Digite o e-mail da conta a ser recuperada:</p>
                 <input class="font-p-normal" required type="email" placeholder="Digite o e-mail da sua conta">
             </div>
-            <div class="user__password step-2 hidden">
+            <div class="supplier__password step-2 hidden">
                 <p class="font-p-normal">Digite o código recebido por e-mail:</p>
                 <input class="font-p-normal" required type="text" placeholder="Digite o código de recuperação">
             </div>
-            <div class="user__password step-3 hidden">
+            <div class="supplier__password step-3 hidden">
                 <p class="font-p-normal">Crie uma nova senha:</p>
                 <input class="font-p-normal" required type="password" placeholder="Nova senha">
                 <input class="font-p-normal" required type="password" placeholder="Confirme a senha">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uServ | Login</title>
+    <title>uServ | Login - Fornecedor</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -12,10 +12,10 @@
 
     <link rel="stylesheet" href="../src/styles/reset.css">
     <link rel="stylesheet" href="../src/styles/globalStyles.css">
-    <link rel="stylesheet" href="../src/styles/usuario/sharedStyles.css">
-    <link rel="stylesheet" href="../src/styles/usuario/login.css">
+    <link rel="stylesheet" href="../src/styles/fornecedor/sharedStyles.css">
+    <link rel="stylesheet" href="../src/styles/fornecedor/login.css">
 
-    <script type="module" src="../src/scripts/usuario/login.js" defer></script>
+    <script type="module" src="../src/scripts/fornecedor/login.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,24 +23,24 @@
             <a href="../index.html">
                 <img src="../src/image/icons/userv-medium.png" alt="logo userv">
             </a>
-            <nav id="usuario__header__nav">
+            <nav id="supplier__header__nav">
                 <button class="btn--nav">Home</button>
-                <button class="btn--nav">Cadastro</button>
+                <button class="btn--nav">Cadastrar Fornecedor</button>
             </nav>
         </div>
     </header>
     <main>
         <section>
-            <form id="user__login__form">
+            <form id="supplier__login__form">
                 <h1 class="font-tittle--big">Login</h1>
-                <div class="user__login__input__container">
-                    <input required class="font-p-normal" type="text" placeholder="Digite seu nome de Usuário">
-                    <input required class="font-p-normal" type="password" placeholder="Digite sua Senha">
+                <div class="supplier__login__input__container">
+                    <input required class="font-p-normal" type="text" placeholder="Digite seu Usuário de Fornecedor">
+                    <input required class="font-p-normal" type="password" placeholder="Digite a Senha">
                 </div>
                 <button class="btn--green--wide" type="submit">Entrar</button>
-                <div class="user__login__links">
+                <div class="supplier__login__links">
                     <a class="font-p-normal" href="./recuperar-senha.html">Esqueci minha senha</a>
-                    <a class="font-p-normal" href="./cadastro.html">Cadastrar-se</a>
+                    <a class="font-p-normal" href="./cadastro.html">Cadastrar fornecedor</a>
                 </div>
             </form>
         </section>

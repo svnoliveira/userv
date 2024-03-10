@@ -45,6 +45,9 @@
 html{
     background: rgb(48,153,107);
     background: linear-gradient(0deg, rgba(48,153,107,1) 0%, rgba(65,62,138,1) 50%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
 }
 
 body{
@@ -66,12 +69,25 @@ button{
     border-radius: 0.2rem;
     padding: 1.6rem;
     position: fixed;
-    z-index: 1;
-    left: 50%; 
-    bottom: 3rem;
+    top: 50%;
+    z-index: 4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    border-radius: 1rem;
 
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 3s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    10%,90% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+    0%,100% { opacity: 0 }
+    10%,90% { opacity: 1 }
 }
 
 .display-none {
@@ -94,6 +110,11 @@ button{
     font-weight: 400;
 }
 
+.font-tag--bold {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
 .font-p-normal {
     font-size: 1.8rem;
     font-weight: 100;
@@ -102,6 +123,23 @@ button{
 .font-p-normal--solid {
     font-size: 1.8rem;
     font-weight: 400;
+}
+
+.font-label--green {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-brand-1);
+}
+
+.font-small--normal {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.font-small--blue {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-brand-2);
 }
 
 /* buttons */

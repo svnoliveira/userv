@@ -25,6 +25,6 @@ const handleRegistration = () => {
         }
     })
 }
-handleRegistration();
 
+handleRegistration();
 handleUsuarioHeader();

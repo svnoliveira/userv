@@ -38,6 +38,19 @@ export const userRouteProtection = (mode) => {
     }
 }
 
+export const supplierRouteProtection = (mode) => {
+    const userToken = localStorage.getItem("@uServ: supplierToken");
+    if (mode === "open"){
+        if (userToken){
+            location.replace('../painel/home.html');
+        }
+    } else if (mode === "closed") {
+        if (!userToken){
+            location.replace('./login.html')
+        }
+    }
+}
+
 //header
 
 export const handleIndexHeader = () => {
@@ -64,7 +77,7 @@ export const handleUsuarioHeader = () => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
                 location.replace('../usuario/login.html')
-            } else if (button.innerText === 'Cadastro'){
+            } else if (button.innerText === 'Cadastrar Fornecedor'){
                 location.replace('../usuario/cadastro.html')
             } else if (button.innerText === 'Home'){
                 location.replace('../index.html')
@@ -79,6 +92,30 @@ export const handleUsuarioHeader = () => {
     });
 };
 
+export const handleFornecedorHeader = () => {
+    const buttonList = document.querySelectorAll('#supplier__header__nav > button')
+
+    buttonList.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.innerText === 'Login'){
+                location.replace('../supplier/login.html')
+            } else if (button.innerText === 'Cadastro'){
+                location.replace('../supplier/cadastro.html')
+            } else if (button.innerText === 'Home'){
+                location.replace('../index.html')
+            } else if (button.innerText === 'Logout'){
+                toast('green', 'Desconectando')
+                localStorage.clear()
+                setTimeout(() =>{
+                    location.replace('./login.html')
+                },1500)
+            }
+        })
+    });
+};
+
+
+//utilities
 export const getCategoryImageInfo = (mode, name) => {
     const foundCategory = categories.find((category) => category.name == name);
     if (foundCategory){

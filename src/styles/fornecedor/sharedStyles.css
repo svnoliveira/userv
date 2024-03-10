@@ -1,0 +1,35 @@
+
+header {
+    background-color: var(--color-mode);
+    height: 8dvh;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    position: relative;
+    z-index: 2;
+}
+
+header > div {
+    max-width: 140rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav button{
+    margin-right: 5rem;
+}
+
+header img {
+    height: 7dvh;
+    width: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-mode);
+}

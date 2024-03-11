@@ -193,6 +193,53 @@
       </div>
     </div>
   </main>
+  <section class="modal">
+    <dialog class="modal__controller" id="plan__modal__controller">
+      <div class="modal__container">
+        <div id="modal__plan__card"></div>
+        <div id="modal__plan__form">
+          <div class="modal__header">
+            <h1 class="font-tittle--normal">Resumo da Assinatura</h1>
+            <button class="modal__close-button font-tittle--normal">X</button>
+          </div>
+          <div id="checkout__plan">
+            <div>
+              <p class="font-p-normal--solid">Plano:</p>
+              <p id="checkout__plan--name" class="font-p-normal--solid">Avançado</p>
+            </div>
+            <div>
+              <p class="font-p-normal--solid">Valor:</p>
+              <p id="checkout__plan--price" class="font-p-normal--solid">R$ 150,00</p>
+            </div>
+          </div>
+          <h2 class="font-tag--bold">Dados para Pagamento</h2>
+          <form>
+            <div>
+              <div class="checkout__input__box">
+                <label for="checkout__card_number" class="font-p-normal--solid">Número do cartão</label>
+                <input id="checkout__card_number" type="text" placeholder="0000 0000 0000 0000" class="font-p-normal--solid">
+              </div>
+              <div class="checkout__input__box">
+                <label for="checkout__card_cvv" class="font-p-normal--solid">CVV</label>
+                <input id="checkout__card_cvv" type="text" placeholder="000" class="font-p-normal--solid">
+              </div>
+            </div>
+            <div>
+              <div class="checkout__input__box">
+                <label for="checkout__card_date" class="font-p-normal--solid">Data de Vencimento</label>
+                <input id="checkout__card_date" type="text" placeholder="MM/AA" class="font-p-normal--solid">
+              </div>
+              <div class="checkout__input__box">
+                <label for="checkout__card_name" class="font-p-normal--solid">Titular do Cartão</label>
+                <input id="checkout__card_name" type="text" placeholder="Titular" class="font-p-normal--solid">
+              </div>
+            </div>
+          </form>
+          <button id="checkout__button" class="btn--green--wide">ASSINAR</button>
+        </div>
+      </div>
+    </dialog>
+  </section>
 </body>
 
 </html>

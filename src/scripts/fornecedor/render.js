@@ -1,6 +1,22 @@
 import { toast } from "../render.js";
 import { getCep } from "./request.js";
 
+
+export const renderPlanModal =  (card, name, price) => {
+  const modalPlanCard = document.getElementById('modal__plan__card');
+  const modalPrice = document.getElementById('checkout__plan--price');
+  const modalName = document.getElementById('checkout__plan--name');
+
+  while (modalPlanCard.firstChild) {
+    modalPlanCard.removeChild(modalPlanCard.firstChild);
+  };
+  const newCard = card.cloneNode(true);
+  newCard.id = 'modal__plan__card--new';
+  modalPlanCard.appendChild(newCard);
+  modalPrice.textContent = price;
+  modalName.textContent = name;
+};
+
 export const handleLabels = () => {
   const inputs = document.querySelectorAll(
     ".supplier__register input, .supplier__register select"
@@ -37,7 +53,6 @@ inputElement.addEventListener("input", async (event) => {
       //add loading
       inputElement.disabled = true;
       cep = await getCep(formattedValue);
-      console.log(cep);
       if (cep.erro === 'true') {
         throw new Error('Cep não encontrado');
       }
@@ -134,26 +149,26 @@ export const handleSuplierForm = () => {
 
   buttonStep1.addEventListener("click", (event) => {
     event.preventDefault();
-    // try {
-    //   if (name.value.length <= 3){
-    //     throw new Error('Não deixe o Nome em branco!');
-    //   }
-    //   if (email.value.length <= 3 || !email.value.includes('@')){
-    //     throw new Error('e-mail inválido!');
-    //   }
-    //   if (phone.value.length <= 3){
-    //     throw new Error('Não deixe o Telefone em branco!');
-    //   }
-    //   if (password.value.length <= 3){
-    //     throw new Error('Não deixe a senha em branco!');
-    //   }
-    //   if (password.value !== confirm.value){
-    //     throw new Error('Confirmação de senha falhou!');
-    //   }
-    // } catch (error) {
-    //   toast('red', error.message);
-    //   return;
-    // }
+    try {
+      if (name.value.length <= 3){
+        throw new Error('Não deixe o Nome em branco!');
+      }
+      if (email.value.length <= 3 || !email.value.includes('@')){
+        throw new Error('e-mail inválido!');
+      }
+      if (phone.value.length <= 3){
+        throw new Error('Não deixe o Telefone em branco!');
+      }
+      if (password.value.length <= 3){
+        throw new Error('Não deixe a senha em branco!');
+      }
+      if (password.value !== confirm.value){
+        throw new Error('Confirmação de senha falhou!');
+      }
+    } catch (error) {
+      toast('red', error.message);
+      return;
+    }
 
     step1.classList.toggle("hidden");
     step1.classList.toggle("show");
@@ -196,36 +211,36 @@ export const handleSuplierForm = () => {
 
   buttonStep2.addEventListener("click", (event) => {
     event.preventDefault();
-    // try {
-    //   if (doc.value.length <= 3) {
-    //     throw new Error("Não deixe o Documento em branco!");
-    //   }
-    //   if (companyName.value.length <= 3) {
-    //     throw new Error("Não deixe o nome da empresa em branco!");
-    //   }
-    //   if (companyFantasy.value.length <= 3) {
-    //     throw new Error("Não deixe o nome fantasia em branco!");
-    //   }
-    //   if (companyCpf.value.length <= 3) {
-    //     throw new Error("Não deixe o cpf em branco!");
-    //   }
-    //   if (companyCategory.value.length <= 3) {
-    //     throw new Error("Não deixe a categoria em branco!");
-    //   }
-    //   if (contract.checked === false) {
-    //     throw new Error("Leia o contrato para continuar!");
-    //   }
-    //   if (!image.files || !image.files.length) {
-    //     throw new Error("Coloque uma imagem!");
-    //   }
+    try {
+      if (doc.value.length <= 3) {
+        throw new Error("Não deixe o Documento em branco!");
+      }
+      if (companyName.value.length <= 3) {
+        throw new Error("Não deixe o nome da empresa em branco!");
+      }
+      if (companyFantasy.value.length <= 3) {
+        throw new Error("Não deixe o nome fantasia em branco!");
+      }
+      if (companyCpf.value.length <= 3) {
+        throw new Error("Não deixe o cpf em branco!");
+      }
+      if (companyCategory.value.length <= 3) {
+        throw new Error("Não deixe a categoria em branco!");
+      }
+      if (contract.checked === false) {
+        throw new Error("Leia o contrato para continuar!");
+      }
+      if (!image.files || !image.files.length) {
+        throw new Error("Coloque uma imagem!");
+      }
 
-    //   if (!docFile.files || !docFile.files.length) {
-    //     throw new Error("Coloque o arquivo da CDN Federal!");
-    //   }
-    // } catch (error) {
-    //   toast("red", error.message);
-    //   return;
-    // };
+      if (!docFile.files || !docFile.files.length) {
+        throw new Error("Coloque o arquivo da CDN Federal!");
+      }
+    } catch (error) {
+      toast("red", error.message);
+      return;
+    };
 
     step2.classList.toggle("hidden");
     step2.classList.toggle("show");
@@ -245,21 +260,110 @@ export const handleSuplierForm = () => {
 
   buttonStep3.addEventListener('click', (event) => {
     event.preventDefault();
-    // try {
-    //   if (cep.value.length <= 8 || uf.value.length !== 2){
-    //     throw new Error('Preencha o endereço da sua empresa');
-    //   }
-    //   if (cep.value.length === 0){
-    //     throw new Error('Preencha o número da sua empresa');
-    //   }
-    // } catch (error) {
-    //     toast('red', error.message);
-    //     return;
-    // };
+    try {
+      if (cep.value.length <= 8 || uf.value.length !== 2){
+        throw new Error('Preencha o endereço da sua empresa');
+      }
+      if (cep.value.length === 0){
+        throw new Error('Preencha o número da sua empresa');
+      }
+    } catch (error) {
+        toast('red', error.message);
+        return;
+    };
 
     step3.classList.toggle("hidden");
     step3.classList.toggle("show");
     step4.classList.toggle("show");
     step4.classList.toggle("hidden");
+  });
+
+  //step 4
+  const basicPlanButton = document.getElementById('plan-btn--basic');
+  const advancedPlanButton = document.getElementById('plan-btn--advanced');
+  const modalController = document.getElementById('plan__modal__controller');
+  const cardBasic = document.getElementById('card--basic');
+  const cardAdvanced = document.getElementById('card--advanced');
+
+  const handlePlanButton = (btn, card, name, price) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      modalController.showModal();
+      renderPlanModal(card, name, price);
+    });
+  };
+  handlePlanButton(basicPlanButton, cardBasic, 'Básico', 'R$ 120,00');
+  handlePlanButton(advancedPlanButton, cardAdvanced, 'Avançado', 'R$ 150,00');
+
+  //checkout
+
+  const submitButton = document.getElementById('checkout__button');
+  
+  submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('clicked');
+    const cardNumber = document.getElementById('checkout__card_number');
+    const cvv = document.getElementById('checkout__card_cvv');
+    const cardDate = document.getElementById('checkout__card_date');
+    const cardName = document.getElementById('checkout__card_name');
+
+    try {
+      if (cardNumber.value.length < 3){
+        throw new Error('Preencha o número do cartão');
+      }
+      if (cvv.value.length < 3){
+        throw new Error('Preencha o código cvv');
+      }
+      if (cardDate.value.length < 3){
+        throw new Error('Preencha data de expiração');
+      }
+      if (cardName.value.length < 3){
+        throw new Error('Preencha o nome do proprietário');
+      }
+    } catch (error) {
+        toast('red', error.message);
+        return;
+    };
+
+    const creditData = {
+      number: cardNumber.value,
+      cvv: cvv.value,
+      date: cardDate.value,
+      name: cardName.value
+    }
+    //api request para o meio de pagamento
+    //colocar condição caso a compra seja concluida
+    
+    const registerData = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      phone: phone.value,
+      companyName: companyName.value,
+      fantasyName: companyFantasy.value,
+      category: companyCategory.value,
+      image: image.files[0].name,
+      companyDocument: {
+        cnpj: doc.value,
+        cpf: companyCpf.value,
+      },
+      address: {
+        cep: cep.value,
+        street: street.value,
+        number: number.value,
+        complement: complement.value,
+        neighborhood: neighbornhood.value,
+        city: city.value,
+        uf: uf.value,
+      }
+    }
+
+    // registrar conta na API com estes dados
+    console.log(registerData); //fins de teste, remover.
+
+    setTimeout( () => {
+      toast('green', 'assinatura concluída com sucesso');
+      location.replace('./login.html');
+    }, 4000)
   });
 };

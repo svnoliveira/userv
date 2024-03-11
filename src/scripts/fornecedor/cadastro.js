@@ -1,5 +1,5 @@
 import { handleFornecedorHeader, supplierRouteProtection } from "../render.js";
-import { handleFileDrop, handleLabels } from "./render.js";
+import { handleCep, handleFileDrop, handleLabels, handleSuplierForm } from "./render.js";
 
 
 supplierRouteProtection("open");
@@ -32,3 +32,5 @@ supplierRouteProtection("open");
 handleFornecedorHeader();
 handleLabels(); 
 handleFileDrop();
+handleSuplierForm();
+handleCep();

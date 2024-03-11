@@ -43,13 +43,23 @@
           <li class=""></li>
           <li class=""></li>
         </ol>
-        <p class="font-p-normal">Informações do administrador:</p>
+        <p class="font-p-normal">Informações do Administrador:</p>
         <div>
-          <input class="font-p-normal" required type="text" placeholder="Digite seu Nome Completo">
-          <input class="font-p-normal" required type="email" placeholder="Digite um e-mail">
-          <input class="font-p-normal" required type="text" placeholder="Telefone para Contato">
-          <input class="font-p-normal" required type="password" placeholder="Digite uma senha">
-          <input class="font-p-normal" required type="password" placeholder="Confirme a senha">
+          <label class="font-label--green" for="register__document--owner-name">Nome</label>
+          <input id="register__document--owner-name" class="font-p-normal" required type="text"
+            placeholder="Digite seu Nome Completo">
+          <label class="font-label--green" for="register__document--owner-email">E-mail</label>
+          <input id="register__document--owner-email" class="font-p-normal" required type="email"
+            placeholder="Digite um e-mail">
+          <label class="font-label--green" for="register__document--owner-phone">Telefone</label>
+          <input id="register__document--owner-phone" class="font-p-normal" required type="text"
+            placeholder="Telefone para Contato">
+          <label class="font-label--green" for="register__document--owner-password">Senha</label>
+          <input id="register__document--owner-password" class="font-p-normal" required type="password"
+            placeholder="Digite uma senha">
+          <label class="font-label--green" for="register__document--owner-confirm">Confirmação</label>
+          <input id="register__document--owner-confirm" class="font-p-normal" required type="password"
+            placeholder="Confirme a senha">
           <button id="supplier--button-step1" class="btn--green--wide" type="submit">Continuar</button>
         </div>
       </div>
@@ -65,16 +75,16 @@
           <p class="font-p-normal">Informações da Empresa:</p>
           <label class="font-label--green" for="register__document">Tipo de Documento</label>
           <select name="register__document" class="font-p-normal" id="register__document">
-            <option class="font-p-normal" value="default">....</option>
+            <option class="font-p-normal" value="default">Selecione...</option>
             <option class="font-p-normal" value="cnpj">CNPJ</option>
             <option class="font-p-normal" value="cpf">CPF</option>
           </select>
-          <label class="font-label--green" for="register__document--input">CPF</label>
+          <label id="register__document--input-label" class="font-label--green" for="register__document--input">Selecione um tipo de documento</label>
           <input id="register__document--input" class="font-p-normal" required type="text"
-            placeholder="Digite o número do seu documento">
+            placeholder="Digite o número do seu documento" disabled>
           <label class="font-label--green" for="register__document--name">Nome da Empresa</label>
           <input id="register__document--name" class="font-p-normal" required type="text"
-            placeholder="Digite o número do documento primeiro">
+            placeholder="Digite o nome da sua empresa">
           <label class="font-label--green" for="register__document--fantasy">Qual nome aparecerá no App?</label>
           <input id="register__document--fantasy" class="font-p-normal" required type="text"
             placeholder="ex.: Mercado do Jõao ou nome Fantasia">
@@ -82,6 +92,7 @@
           <input id="register__document--cpf" class="font-p-normal" required type="text" placeholder="000.000.000-00">
           <label class="font-label--green" for="register__document--category">Segmento de Atuação</label>
           <select name="register__document--category" id="register__document--category" class="font-p-normal">
+            <option class="font-p-normal" value="">Selecione uma Área de Atuação</option>
             <option class="font-p-normal" value="Consultoria">Consultoria</option>
             <option class="font-p-normal" value="Assistência Técnica">Assistência Técnica</option>
             <option class="font-p-normal" value="Turismo e Viagens">Turismo e Viagens</option>
@@ -92,7 +103,7 @@
             <option class="font-p-normal" value="Transporte e logística">Transporte e logística</option>
           </select>
           <div class="supplier__terms">
-            <input class="font-small--normal"  type="checkbox" id="register__document--contract">
+            <input class="font-small--normal" type="checkbox" id="register__document--contract">
             <span class="font-small--normal">Li e concordo com o Termo de Uso e Política de Privacidade.</span>
             <span class="font-small--blue">clique aqui para ler.</span>
           </div>
@@ -105,7 +116,8 @@
           <label for="supplier__docInput" id="custom-doc-upload">
             <input type="file" id="supplier__docInput" accept=".jpg, .jpeg, .png, .gif">
             <img src="../src/image/icons/cloud.svg" alt="Ícone de uma núvem com símbolo de upload">
-            <p class="font-tag"><b class="font-tag--bold">Carregar certidão negativa de débitos (CDN Federal)</b> ou arraste e solte</p>
+            <p class="font-tag"><b class="font-tag--bold">Carregar certidão negativa de débitos (CDN Federal)</b> ou
+              arraste e solte</p>
             <p class="font-tag">PNG, JPG ou GIF, (max 2mb)</p>
           </label>
           <button id="supplier--button-step2" class="btn--green--wide" type="submit">Continuar</button>
@@ -123,20 +135,20 @@
           <p class="font-p-normal">Endereço:</p>
           <label class="font-label--green" for="register__address--cep">CEP</label>
           <input id="register__address--cep" class="font-p-normal" required type="text" placeholder="00.000-000">
+          <label class="font-label--green" for="register__address--uf">Estado</label>
+          <input disabled id="register__address--uf" class="font-p-normal" required type="text" placeholder="Estado">
+          <label class="font-label--green" for="register__address--city">Cidade</label>
+          <input disabled id="register__address--city" class="font-p-normal" required type="text" placeholder="Cidade">
+          <label class="font-label--green" for="register__address--neighbornhood">Bairro</label>
+          <input disabled id="register__address--neighbornhood" class="font-p-normal" required type="text" placeholder="Bairro">
           <label class="font-label--green" for="register__address--street">Logadouro</label>
-          <input id="register__address--street" class="font-p-normal" required type="text"
+          <input disabled id="register__address--street" class="font-p-normal" required type="text"
             placeholder="Rua, Avenida, etc.">
           <label class="font-label--green" for="register__address--number">Número</label>
           <input id="register__address--number" class="font-p-normal" required type="text" placeholder="Número">
           <label class="font-label--green" for="register__address--complement">Complemento</label>
-          <input id="register__address--complement" class="font-p-normal" required type="text"
+          <input id="register__address--complement" class="font-p-normal" type="text"
             placeholder="Complemento">
-          <label class="font-label--green" for="register__address--neighbornhood">Bairro</label>
-          <input id="register__address--neighbornhood" class="font-p-normal" required type="text" placeholder="Bairro">
-          <label class="font-label--green" for="register__address--city">Cidade</label>
-          <input id="register__address--city" class="font-p-normal" required type="text" placeholder="Cidade">
-          <label class="font-label--green" for="register__address--uf">Estado</label>
-          <input id="register__address--uf" class="font-p-normal" required type="text" placeholder="Estado">
           <button id="supplier--button-step3" class="btn--green--wide" type="submit">Continuar</button>
         </div>
       </div>

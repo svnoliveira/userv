@@ -98,9 +98,9 @@ export const handleFornecedorHeader = () => {
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('../supplier/login.html')
+                location.replace('../fornecedor/login.html')
             } else if (button.innerText === 'Cadastro'){
-                location.replace('../supplier/cadastro.html')
+                location.replace('../fornecedor/cadastro.html')
             } else if (button.innerText === 'Home'){
                 location.replace('../index.html')
             } else if (button.innerText === 'Logout'){

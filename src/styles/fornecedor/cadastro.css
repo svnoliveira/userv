@@ -8,6 +8,15 @@
     display: none;
 }
 
+body {
+    background-image: url("../../image/fornecedores/office6.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    height: auto;
+}
+
 main {
     width: min(85%, 140rem);
     margin-left: auto;

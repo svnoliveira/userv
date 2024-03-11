@@ -61,8 +61,8 @@ export const handleIndexHeader = () => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Usuário'){
                 location.replace('./usuario/home.html')
-            } else if (button.innerText === 'Fornecedor'){
-                location.replace('./fornecedor/login.html')
+            } else if (button.innerText === 'Colaborador'){
+                location.replace('./colaborador/login.html')
             } else if (button.innerText === 'Contato'){
                 contactContainer.classList.toggle('display-none');
             }
@@ -76,41 +76,41 @@ export const handleUsuarioHeader = () => {
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('../usuario/login.html')
-            } else if (button.innerText === 'Cadastrar Fornecedor'){
-                location.replace('../usuario/cadastro.html')
+                location.replace('../usuario/login.html');
+            } else if (button.innerText === 'Cadastrar Colaborador'){
+                location.replace('../usuario/cadastro.html');
             } else if (button.innerText === 'Home'){
-                location.replace('../index.html')
+                location.replace('../index.html');
             } else if (button.innerText === 'Logout'){
-                toast('green', 'Desconectando')
-                localStorage.clear()
+                toast('green', 'Desconectando');
+                localStorage.removeItem('@uServ: userToken');
                 setTimeout(() =>{
-                    location.replace('./login.html')
-                },1500)
-            }
-        })
+                    location.replace('./login.html');
+                },1500);
+            };
+        });
     });
 };
 
-export const handleFornecedorHeader = () => {
+export const handleColaboradorHeader = () => {
     const buttonList = document.querySelectorAll('#supplier__header__nav > button')
 
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('../fornecedor/login.html')
-            } else if (button.innerText === 'Cadastro'){
-                location.replace('../fornecedor/cadastro.html')
+                location.replace('../colaborador/login.html');
+            } else if (button.innerText === 'Cadastrar Colaborador'){
+                location.replace('../colaborador/cadastro.html');
             } else if (button.innerText === 'Home'){
-                location.replace('../index.html')
+                location.replace('../index.html');
             } else if (button.innerText === 'Logout'){
-                toast('green', 'Desconectando')
-                localStorage.clear()
+                toast('green', 'Desconectando');
+                localStorage.removeItem('@uServ: supplierToken');
                 setTimeout(() =>{
-                    location.replace('./login.html')
-                },1500)
-            }
-        })
+                    location.replace('./login.html');
+                },1500);
+            };
+        });
     });
 };
 

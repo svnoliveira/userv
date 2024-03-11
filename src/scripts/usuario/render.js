@@ -111,8 +111,8 @@ export const renderSupplierList = () => {
     const card = document.createElement("li");
     const message = document.createElement("p");
 
-    message.classList.add("font-p-normal--solid", "fornecedor__card__empty");
-    message.innerText = "Nenhum fornecedor encontrado.";
+    message.classList.add("font-p-normal--solid", "colaborador__card__empty");
+    message.innerText = "Nenhum colaborador encontrado.";
     card.appendChild(message);
     listContainer.appendChild(card);
     return;
@@ -135,30 +135,30 @@ export const renderSupplierList = () => {
       const star = document.createElement("img");
       const rating = document.createElement("span");
 
-      card.classList.add("fornecedor__card");
+      card.classList.add("colaborador__card");
       image.src = supplier.image;
       image.alt = `Logo ou imagem da empresa ${supplier.fantasyName}`;
-      textBox.classList.add("fornecedor__card__text-box");
+      textBox.classList.add("colaborador__card__text-box");
       name.classList.add("font-tittle--normal");
       name.innerText = supplier.fantasyName;
-      priceContainer.classList.add("fornecedor__card__price");
+      priceContainer.classList.add("colaborador__card__price");
       priceCall.classList.add("font-p-normal");
       priceCall.innerText = "Preço inicial: ";
       price.classList.add("font-p-normal");
       price.innerText = formatPrice(supplier.startingPrice);
-      detailContainer.classList.add("fornecedor__card__detail");
+      detailContainer.classList.add("colaborador__card__detail");
       address.classList.add("font-p-normal");
       address.innerText = `${supplier.address.city} - ${supplier.address.uf}`;
-      categoryContainer.classList.add("fornecedor__card__category");
+      categoryContainer.classList.add("colaborador__card__category");
       categoryImg.src = getCategoryImageInfo("src", supplier.category);
       categoryImg.alt = getCategoryImageInfo("alt", supplier.category);
       categoryName.innerText = supplier.category;
-      ratingContainer.classList.add("fornecedor__card__rating");
+      ratingContainer.classList.add("colaborador__card__rating");
       star.classList.add("star");
       star.src = "../src/image/icons/star.svg";
       star.alt = "Ícone de uma estrela";
       rating.classList.add("font-p-normal--solid");
-      rating.innerText = "5"; //adicionar chave de avaliação do fornecedor
+      rating.innerText = "5"; //adicionar chave de avaliação do colaborador
 
       listContainer.appendChild(card);
       card.append(image, textBox, ratingContainer);

@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url("../../image/fornecedores/office6.png");
+    background-image: url("../../image/colaboradores/office6.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -217,20 +217,20 @@ label > p {
 
 #modal__plan__card--new,
 #card--basic {
-    background-image: url("../../image/fornecedores/plans/overlay-light.png");   
+    background-image: url("../../image/colaboradores/plans/overlay-light.png");   
 }
 
 #modal__plan__card--new:hover,
 #card--basic:hover {
-    background-image: url("../../image/fornecedores/plans/overlay-gradient.png");
+    background-image: url("../../image/colaboradores/plans/overlay-gradient.png");
 }
 
 #card--advanced {
-    background-image: url("../../image/fornecedores/plans/overlay-ligh-flipt.png");
+    background-image: url("../../image/colaboradores/plans/overlay-ligh-flipt.png");
 }
 
 #card--advanced:hover {
-    background-image: url("../../image/fornecedores/plans/overlay-gradien-flipt.png");
+    background-image: url("../../image/colaboradores/plans/overlay-gradien-flipt.png");
 }
 
 #modal__plan__card--new button{
@@ -369,6 +369,29 @@ dialog form {
     border-radius: 0.5rem;
 }
 
+.modal__close-button {
+    background-color: transparent;
+}
+
 #modal__plan__form > button {
     margin: auto;
+}
+
+#terms__text {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+    padding-top: 10%;
+    height: 100%;
+}
+
+#terms__box {
+    padding: 1rem;
+    max-width: 80rem;
+}
+
+#terms__box h1 {
+    margin: 0 auto;
 }

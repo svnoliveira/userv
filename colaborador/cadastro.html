@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>uServ | Cadastro de Fornecedor</title>
+  <title>uServ | Cadastro de Colaborador</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -13,10 +13,10 @@
 
   <link rel="stylesheet" href="../src/styles/reset.css">
   <link rel="stylesheet" href="../src/styles/globalStyles.css">
-  <link rel="stylesheet" href="../src/styles/fornecedor/sharedStyles.css">
-  <link rel="stylesheet" href="../src/styles/fornecedor/cadastro.css">
+  <link rel="stylesheet" href="../src/styles/colaborador/sharedStyles.css">
+  <link rel="stylesheet" href="../src/styles/colaborador/cadastro.css">
 
-  <script type="module" src="../src/scripts/fornecedor/cadastro.js" defer></script>
+  <script type="module" src="../src/scripts/colaborador/cadastro.js" defer></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
   </header>
   <main>
     <section id="supplier__title">
-      <h1 class="font-tittle--big">Cadastrar Fornecedor</h1>
+      <h1 class="font-tittle--big">Cadastrar Colaborador</h1>
     </section>
     <form id="supplier__form">
       <div class="supplier__register step-1 show">
@@ -105,7 +105,7 @@
           <div class="supplier__terms">
             <input class="font-small--normal" type="checkbox" id="register__document--contract">
             <span class="font-small--normal">Li e concordo com o Termo de Uso e Política de Privacidade.</span>
-            <span class="font-small--blue">clique aqui para ler.</span>
+            <span id="term__button" class="font-small--blue">clique aqui para ler.</span>
           </div>
           <label for="supplier__fileInput" id="custom-file-upload">
             <input type="file" id="supplier__fileInput" accept=".jpg, .jpeg, .png, .gif">
@@ -236,6 +236,22 @@
             </div>
           </form>
           <button id="checkout__button" class="btn--green--wide">ASSINAR</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog class="modal__controller" id="terms__modal__controller">
+      <div class="modal__container">
+        <div id="terms__box">
+          <div class="modal__header">
+            <h1 class="font-tittle--normal">Termos do contrato</h1>
+            <button class="modal__close-button font-tittle--normal">X</button>
+          </div>
+          <div id="terms__text">
+            <p class="font-small--normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus maiores quasi possimus perferendis enim distinctio corrupti excepturi? Cum vero dolore exercitationem? Explicabo quia consequuntur, adipisci nulla sunt necessitatibus architecto eos?</p>
+            <p class="font-small--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius mollitia minima soluta quod, ratione autem, quisquam optio velit deserunt expedita odio. Ex, officiis suscipit placeat quo amet porro laborum!</p>
+            <p class="font-small--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus enim suscipit similique in non cupiditate pariatur odio, quas eveniet modi atque placeat obcaecati! Tenetur voluptates dolorum expedita, deserunt eveniet iusto!</p>
+            <p class="font-small--normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quod expedita fuga ipsa qui pariatur quam dolorem incidunt voluptatem quasi reiciendis corrupti excepturi impedit, similique, minus, esse alias magni velit.</p>
+          </div>
         </div>
       </div>
     </dialog>

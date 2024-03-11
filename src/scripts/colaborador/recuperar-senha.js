@@ -1,4 +1,4 @@
-import { handleFornecedorHeader, supplierRouteProtection, toast } from "../render.js";
+import { handleColaboradorHeader, supplierRouteProtection, toast } from "../render.js";
 
 supplierRouteProtection("open");
 
@@ -74,5 +74,5 @@ const handleRecovery = () => {
   });
 };
 
-handleFornecedorHeader();
+handleColaboradorHeader();
 handleRecovery();

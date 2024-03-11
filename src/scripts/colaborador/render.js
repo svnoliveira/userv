@@ -1,6 +1,37 @@
 import { toast } from "../render.js";
 import { getCep } from "./request.js";
 
+export const handleModalClick = () => {
+  const termsButton = document.getElementById('term__button');
+  const termsController = document.getElementById('terms__modal__controller');
+  const planController = document.getElementById('plan__modal__controller');
+  const xButtons = document.querySelectorAll('.modal__close-button');
+  
+  termsButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    termsController.showModal();
+  });
+
+  xButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      termsController.close();
+      planController.close();
+      event.stopPropagation();
+    });
+  });
+
+  const handleOutClick = (modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.close();
+        event.stopPropagation();
+      }
+    });
+  };
+  handleOutClick(termsController);
+  handleOutClick(planController);
+};
 
 export const renderPlanModal =  (card, name, price) => {
   const modalPlanCard = document.getElementById('modal__plan__card');

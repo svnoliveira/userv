@@ -9,11 +9,13 @@ main {
   display: flex;
   padding-bottom: 10rem;
   background-image: url('../../image/office-items.png');
+  overflow-x: auto;
 }
 
 #calendar__section {
-  width: 70%;
-  height: 80dvh;
+  width: min(130rem, 98%);
+  height: 83rem;
+  min-width: 77rem;
   display: flex;
   margin-top: 5rem;
   justify-content: center;
@@ -48,24 +50,25 @@ main {
 }
 #weekdays {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   color: var(--color-weekdays);
   text-align: center;
   font-size: 1.5rem;
 }
 #weekdays div {
-  width: calc(100% / 7);
+  width: 10rem;
   padding: 1rem;
 }
 #calendar {
   width: 100%;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
 .day {
-  width: 10rem;
   padding: 1rem;
+  width: 10rem;
   height: 10rem;
   font-size: 1.8rem;
   color: white;

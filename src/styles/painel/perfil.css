@@ -1,0 +1,88 @@
+body {
+    background-color: var(--color-mode);
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.profile__boundary {
+    width: min(120rem, 90%);
+    margin: 0 auto;
+}
+
+.profile__main {
+    display: flex;
+    margin: 2rem 0;
+    padding: 0 0.5rem;
+    gap: 1rem;
+    height: 100%;
+}
+
+.profile__main > img{
+    width: 65%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.profile__info {
+    background-color: var(--color-pale);
+    border-radius: 1.5rem;
+    width: 35%;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__price {
+    margin-top: auto;
+    padding: 2rem 1.2rem;
+}
+
+.profile__text,
+.profile__price {
+    width: 100%;
+    background-color: var(--color-mode);
+    border-radius: 1.5rem;
+}
+
+.profile__text {
+    height: 100%;
+    padding: 0.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile__text > div{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__text > div > :nth-child(2) {
+    margin-left: 3rem;
+    width: calc(100% - 3rem);
+    border: 0.1rem var(--color-pale) solid;
+    border-radius: 999em;
+    padding: 0.5rem 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.profile__price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__pictures {
+    width: 65%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0 0.5rem;
+    position: relative;
+}
+
+.profile__pictures > img {
+    min-width: 25%;
+    border-radius: 0.9rem;
+}

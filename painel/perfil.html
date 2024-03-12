@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uServ | Painel de Controle</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/globalStyles.css">
+    <link rel="stylesheet" href="../src/styles/painel/sharedStyles.css">
+    <link rel="stylesheet" href="../src/styles/painel/perfil.css">
+
+    <script type="module" src="../src/scripts/painel/perfil.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <nav id="supplier__header__nav">
+                <button class="btn--nav">Home</button>
+                <button class="btn--nav">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="painel__home">
+            <nav class="painel__nav">
+                <a href="./home.html">Home</a>
+                <a href="./calendario.html">Calendário</a>
+                <a href="./historico.html">Histórico</a>
+                <a id="current" href="./perfil.html">Perfil</a>
+                <a href="./servicos.html">Serviços</a>
+            </nav>
+        </section>
+        <section class="profile__boundary">
+            <div class="profile__container">
+                <div>
+                    <h1 class="font-title--big">Nome da Empresa</h1>
+                    <p class="font-p-normal">Endereço</p>
+                </div>
+                <div class="profile__main">
+                    <img src="../src/image/colaboradores/base-wide.png" alt="">
+                    <div class="profile__info">
+                        <div class="profile__text">
+                            <div>
+                                <span class="font-p-normal">Nome Oficial :</span><span id="official-name" class="font-p-normal--solid">nome</span>
+                            </div>
+                            <div>
+                                <span class="font-p-normal">Administrador :</span><span id="admin-name" class="font-p-normal--solid">nome</span>
+                            </div>
+                            <div>
+                                <span class="font-p-normal">Email :</span><span id="admin-email" class="font-p-normal--solid">email</span>
+                            </div>
+                            <div>
+                                <span class="font-p-normal">Categoria :</span><span id="admin-category" class="font-p-normal--solid">category</span>
+                            </div>
+                            <div>
+                                <span class="font-p-normal">Telefone :</span><span id="admin-phone" class="font-p-normal--solid">99 999 9999</span>
+                            </div>
+                        </div>
+                        <div class="profile__price">
+                            <span class="font-p-normal--solid">Preço Inicial:</span><span id="admin-price" class="font-p-normal--solid">R$: 120,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile__pictures">
+            </div>
+        </section>
+    </main>
+    <footer class="font-p-normal--solid">Todos Direitos Reservados</footer>
+</body>
+
+</html>

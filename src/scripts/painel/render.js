@@ -1,3 +1,7 @@
+import { historyFromSupplier } from "../../data/history.js";
+import { supplierList } from "../../data/suppliers.js";
+import { formatPrice } from "../render.js";
+
 export const handleCalendar = () => {
     let nav = 0
     let clicked = null
@@ -171,4 +175,61 @@ export const handleCalendar = () => {
     }
     buttons()
     load()
+};
+
+export const renderHistory = () => {
+  const tableBody = document.querySelector('.styled-table tbody');
+
+  historyFromSupplier.map((entry) => {
+    const tableRow = document.createElement('tr');
+    const date = document.createElement('td');
+    const client = document.createElement('td');
+    const service = document.createElement('td');
+    const price = document.createElement('td');
+    const status = document.createElement('td');
+
+    date.innerText = new Date(entry.date).toLocaleDateString('pt-br');
+    client.innerText = entry.client;
+    service.innerText = entry.service;
+    price.innerText = formatPrice(entry.price);
+    status.innerText = entry.status ? 'Concluído' : 'Pendente';
+    status.classList.add(entry.status ? 'done' : 'pending');
+
+    tableRow.append(date, client, service, price, status);
+    tableBody.appendChild(tableRow);
+  });
+};
+
+export const renderProfile = () => {
+  const name = document.querySelector('.profile__container h1');
+  const address = document.querySelector('.profile__container p');
+  const heroImage = document.querySelector('.profile__main img');
+  const officialName = document.querySelector('#official-name');
+  const adminName = document.querySelector('#admin-name');
+  const adminEmail = document.querySelector('#admin-email');
+  const category = document.querySelector('#admin-category');
+  const phone = document.querySelector('#admin-phone');
+  const price = document.querySelector('#admin-price');
+  const profilePictures = document.querySelector('.profile__pictures');
+
+  //api request para pegar o usuário logado
+  const user = supplierList[0];
+
+  name.innerText = user.name;
+  address.innerText = `${user.address.city}, ${user.address.uf}, ${user.address.street}, ${user.address.number}`;
+  heroImage.src = '../src/image/colaboradores/base-wide.png'; //url de uma imagem em alta resolução;
+  heroImage.alt = 'Imagem principal da empresa, ou logo';
+  officialName.innerText = user.fantasyName;
+  adminName.innerText = user.name;
+  adminEmail.innerText = user.email;
+  category.innerText = user.category;
+  phone.innerText = user.phone;
+  price.innerText = formatPrice(user.startingPrice);
+  user.services.map((service) => {
+    //lista de fotos da empresa, aqui usando a chave de serviços apenas como exemplo
+    const picture = document.createElement('img');
+    picture.src = user.image
+    picture.alt = 'Imagem de um serviço da empresa, ou logo';
+    profilePictures.appendChild(picture);
+  });
 };

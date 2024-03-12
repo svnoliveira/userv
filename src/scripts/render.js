@@ -29,11 +29,11 @@ export const userRouteProtection = (mode) => {
     const userToken = localStorage.getItem("@uServ: userToken")
     if (mode === "open"){
         if (userToken){
-            location.replace('./home.html')
+            location.replace('../painel/home.html');
         }
     } else if (mode === "closed") {
         if (!userToken){
-            location.replace('./login.html')
+            location.replace('../colaborador/login.html');
         }
     }
 }
@@ -107,7 +107,7 @@ export const handleColaboradorHeader = () => {
                 toast('green', 'Desconectando');
                 localStorage.removeItem('@uServ: supplierToken');
                 setTimeout(() =>{
-                    location.replace('./login.html');
+                    location.replace('../colaborador/login.html');
                 },1500);
             };
         });

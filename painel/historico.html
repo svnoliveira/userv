@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uServ | Painel de Controle</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/globalStyles.css">
+    <link rel="stylesheet" href="../src/styles/painel/sharedStyles.css">
+    <link rel="stylesheet" href="../src/styles/painel/historico.css">
+
+    <script type="module" src="../src/scripts/painel/historico.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <nav id="supplier__header__nav">
+                <button class="btn--nav">Home</button>
+                <button class="btn--nav">Logout</button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="painel__home">
+            <nav class="painel__nav">
+                <a href="./home.html">Home</a>
+                <a href="./calendario.html">Calendário</a>
+                <a id="current" href="./historico.html">Histórico</a>
+                <a href="./perfil.html">Perfil</a>
+                <a href="./servicos.html">Serviços</a>
+            </nav>
+        </section>
+        <section>
+            <h1 class="font-title--normal">Histórico de serviços prestados</h1>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                        <th>Preço</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

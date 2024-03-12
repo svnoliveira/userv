@@ -70,7 +70,7 @@ main {
     justify-content: space-between;
 }
 
-#index__text__tittle {
+#index__text__title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,7 +91,7 @@ main {
     transform: scale(1.04);
 }
 
-#index__text__tittle > img{
+#index__text__title > img{
     width: 15em;
     height: auto;
     object-fit: contain;

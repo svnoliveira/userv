@@ -139,7 +139,7 @@ export const renderSupplierList = () => {
       image.src = supplier.image;
       image.alt = `Logo ou imagem da empresa ${supplier.fantasyName}`;
       textBox.classList.add("colaborador__card__text-box");
-      name.classList.add("font-tittle--normal");
+      name.classList.add("font-title--normal");
       name.innerText = supplier.fantasyName;
       priceContainer.classList.add("colaborador__card__price");
       priceCall.classList.add("font-p-normal");

@@ -26,13 +26,9 @@
     --color-brand-1: #30996b;
     --color-brand-2: #43328e;
 
-    --color-grey-1: #212529;
-    --color-grey-2: #495057;
-    --color-grey-3: #ADB5BD;
-    --color-grey-4: #E9ECEF;
-    --color-grey-5: #F1F3F5;
-    --color-grey-6: #F8F8F8;
+    --color-pale: #F6F6F6;
     --color-mode: #FFFFFF;
+
     --body-color: transparent;
     --header-color: white;
     --header-button:#92a1d1;
@@ -47,7 +43,7 @@
     font-size: 62.5%;
 
     /* ------------style guide fonts-------------------- */
-    --tittle-1: 600 1.25rem/1.6rem 'Inter';
+    --title-1: 600 1.25rem/1.6rem 'Inter';
     /* ---------------extra fonts----------------------------- */
 }
 
@@ -61,7 +57,7 @@ html{
 
 body{
     max-width: 190rem;
-    height: 100dvh;
+    min-height: 100dvh;
     margin: auto;
     font-family: 'Omnes';
 }
@@ -104,12 +100,12 @@ button{
 }
 
 /* fonts */
-.font-tittle--big {
+.font-title--big {
     font-size: 5.8rem;
     font-weight: bold;
 }
 
-.font-tittle--normal {
+.font-title--normal {
     font-size: 2.2rem;
     font-weight: bold;
 }

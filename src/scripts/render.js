@@ -2,7 +2,7 @@
 
 import { categories } from "../data/categories.js";
 
-export const toast = (color, message) => {
+export const toast = (color, message, element) => {
     const red = '#FF5630';
     const green = '#36B37E';
     let selectedColor = '';
@@ -13,15 +13,15 @@ export const toast = (color, message) => {
         selectedColor = green
     }
 
-    const toastContainer = document.createElement(`div`)
-    const main = document.querySelector('body')
-    toastContainer.classList.add(`toast`)
-    toastContainer.innerText = message
-    toastContainer.style.backgroundColor = selectedColor
+    const toastContainer = document.createElement(`div`);
+    const main = element ? element : document.querySelector('body');
+    toastContainer.classList.add(`toast`);
+    toastContainer.innerText = message;
+    toastContainer.style.backgroundColor = selectedColor;
     main.appendChild(toastContainer);
 
     setTimeout( function(){ 
-        toastContainer.remove(); 
+        toastContainer.remove();
     }, 3000);
 }
 

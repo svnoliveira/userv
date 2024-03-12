@@ -84,7 +84,7 @@ inputElement.addEventListener("input", async (event) => {
       //add loading
       inputElement.disabled = true;
       cep = await getCep(formattedValue);
-      if (cep.erro === 'true') {
+      if (cep.erro === true) {
         throw new Error('Cep não encontrado');
       }
 
@@ -121,6 +121,7 @@ export const handleFileDrop = () => {
     const text = document.querySelectorAll(`#${area} p`);
     const firstLine = text[0];
     const secondLine = text[1];
+    const inputFile = document.getElementById(input);
 
     dropArea.addEventListener("dragover", (event) => {
       event.preventDefault();
@@ -135,7 +136,14 @@ export const handleFileDrop = () => {
       event.preventDefault();
       dropArea.classList.remove("drag-over");
   
-      const files = event.dataTransfer.files;
+      handleFiles(event.dataTransfer.files);
+    });
+
+    inputFile.addEventListener("change", (event) => {
+      handleFiles(event.target.files);
+    });
+
+    const handleFiles = (files) => {
       const maxFileSize = 2 * 1024 * 1024;
       const allowedExtensions = [".png", ".jpeg", ".jpg", ".gif"];
       
@@ -143,20 +151,19 @@ export const handleFileDrop = () => {
           toast("red", "Nenhum arquivo foi detectado!");
           return;
       }
-  
+
       const fileExtension = files[0].name.toLowerCase().slice(-4);
   
       if (fileExtension === ".txt" || files[0].size > maxFileSize || !allowedExtensions.includes(fileExtension)) {
           toast("red", "Arquivo inválido!");
           return;
       } else {
-          document.getElementById(input).files = files;
+          inputFile.files = files;
           image.src = "../src/image/icons/success.svg";
           firstLine.style.display = "none";
           secondLine.innerText = files[0].name;
       }
-  });
-  
+    };
   };
   setupDragAndDrop("custom-file-upload", "supplier__fileInput");
   setupDragAndDrop("custom-doc-upload", "supplier__docInput");
@@ -332,7 +339,6 @@ export const handleSuplierForm = () => {
   
   submitButton.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log('clicked');
     const cardNumber = document.getElementById('checkout__card_number');
     const cvv = document.getElementById('checkout__card_cvv');
     const cardDate = document.getElementById('checkout__card_date');
@@ -352,7 +358,7 @@ export const handleSuplierForm = () => {
         throw new Error('Preencha o nome do proprietário');
       }
     } catch (error) {
-        toast('red', error.message);
+        toast('red', error.message, modalController);
         return;
     };
 
@@ -392,9 +398,9 @@ export const handleSuplierForm = () => {
     // registrar conta na API com estes dados
     console.log(registerData); //fins de teste, remover.
 
+    toast('green', 'assinatura concluída com sucesso', modalController);
     setTimeout( () => {
-      toast('green', 'assinatura concluída com sucesso');
       location.replace('./login.html');
-    }, 4000)
+    }, 2000)
   });
 };

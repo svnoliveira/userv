@@ -233,3 +233,22 @@ export const renderProfile = () => {
     profilePictures.appendChild(picture);
   });
 };
+
+export const renderServices = () => {
+  const serviceContainer = document.querySelector('.alternating-colors');
+
+  //api request para pegar os services do usuário logado 
+  const services = supplierList[0].services;
+
+  services.map((service) => {
+    const serviceCard = document.createElement('li');
+    const serviceName = document.createElement('strong');
+    const serviceDescription = document.createElement('p');
+
+    serviceName.innerText = service.entry
+    serviceDescription.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+
+    serviceCard.append(serviceName, serviceDescription);
+    serviceContainer.appendChild(serviceCard);
+  });
+};

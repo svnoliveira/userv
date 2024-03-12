@@ -1,0 +1,51 @@
+body {
+    background-color: var(--color-mode);
+}
+
+.service__list {
+    display: flex;
+    flex-direction: column;
+    max-width: 42rem;
+    padding: 3.2rem;
+    margin: 6rem auto;
+    border: 0.1rem solid #eee;
+    box-shadow: 0rem 1.2rem 2.4rem rgba(0, 0, 0, 0.06);
+  }
+  
+  ol {
+    padding-left: 5rem;
+    counter-reset: item;
+  }
+  
+  li {
+    padding-left: 1.6rem;
+    margin-top: 2.4rem;
+    position: relative;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+  
+  .alternating-colors li:before {
+    content: counter(item);
+    counter-increment: item;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid #ddd;
+    position: absolute;
+    top: -1.2rem;
+    left: -4.6rem;
+  }
+  
+  ol.alternating-colors li:nth-child(odd):before {
+    border-color: var(--color-brand-1);
+  }
+  
+  ol.alternating-colors li:nth-child(even):before {
+    border-color: var(--color-brand-2);
+  }
+  

@@ -33,8 +33,17 @@
     --color-grey-5: #F1F3F5;
     --color-grey-6: #F8F8F8;
     --color-mode: #FFFFFF;
+    --body-color: transparent;
+    --header-color: white;
+    --header-button:#92a1d1;
+    --color-weekdays: white;
+    --box-shadow: #CBD4C2;
+    --hover: #e8faed;
+    --current-day:#78a1b6;
+    --event-color: #58bae4;
+    --modal-event: #e8f4fa;
+    --color-day: rgba(65,62,138,0.02);
 
-    --container-size: 72.5rem;
     font-size: 62.5%;
 
     /* ------------style guide fonts-------------------- */

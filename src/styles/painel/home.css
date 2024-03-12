@@ -1,0 +1,21 @@
+body {
+    background-color: var(--color-mode);
+}
+
+.painel__hero {
+    background-image: url('../../image/office-dark.png');
+    background-size: cover;
+    height: 60dvh;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.painel__hero  img{
+    height: 60dvh;
+    width: auto;
+}
+
+.painel__title {
+    margin: 0 auto 5dvh auto;
+    text-align: center;
+}

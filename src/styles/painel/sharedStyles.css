@@ -1,0 +1,74 @@
+header {
+    background-color: var(--color-mode);
+    height: 8dvh;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    position: relative;
+    z-index: 2;
+}
+
+header > div {
+    max-width: 140rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav button{
+    margin-right: 5rem;
+}
+
+header img {
+    height: 7dvh;
+    width: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.painel__nav {
+    margin: 5dvh auto;
+    width: min(160rem, 95%);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.painel__home {
+    background-color: var(--color-mode);
+    margin: 0 auto 5dvh auto;
+    width: min(60rem, 95%);
+    text-align: center;
+}
+
+.painel__nav {
+    width: 100%;
+}
+
+.painel__nav a{
+    background-color: rgba(48,153,107,0.15);
+    border-radius: 0.5rem;
+    width: 20%;
+    padding: 1rem 0;
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: 0.5s;
+}
+#current {
+    background-color: var(--color-brand-2);
+    color: var(--color-mode);
+}
+
+#current,
+.painel__nav a:focus,
+.painel__nav a:hover{
+    background-color: var(--color-brand-2);
+    color: var(--color-mode);
+}

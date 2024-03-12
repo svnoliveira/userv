@@ -1,0 +1,151 @@
+body{
+  background-color: var(--color-mode);
+  height: 100%;
+  position: relative;
+}
+
+main {
+  position: relative;
+  display: flex;
+  padding-bottom: 10rem;
+  background-image: url('../../image/office-items.png');
+}
+
+#calendar__section {
+  width: 70%;
+  height: 80dvh;
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+  background-color: rgba(65,62,138,0.18);
+  border: 0.6rem solid white;
+  border-left: none;
+  border-radius: 0 2.5rem 2.5rem 0;
+}
+
+#calendar__section button {
+  width: 7.5rem;
+  cursor: pointer;
+  box-shadow: 0rem 0rem .2rem gray;
+  border: none;
+  outline: none;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+#header {
+  padding: 1rem;
+  color: var(--header-color) ;
+  font-size: 2.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color:var(--header-button);
+}
+#container {
+  width: 77rem;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: var(--color-weekdays);
+  text-align: center;
+  font-size: 1.5rem;
+}
+#weekdays div {
+  width: calc(100% / 7);
+  padding: 1rem;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 10rem;
+  padding: 1rem;
+  height: 10rem;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: var(--color-day);
+  margin: .5rem;
+  box-shadow: 0rem 0rem .3rem var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15%;
+}
+.day:hover {
+  background-color: var(--hover);
+  color: var(--color-brand-2);
+}
+
+.day + #currentDay {
+  background-color:var(--current-day);
+}
+.event {
+  font-size: 1.3rem;
+  padding: .3rem;
+  background-color: var(--event-color);
+  color: white;
+  border-radius: .5rem;
+  max-height: 5.5rem;
+  overflow: hidden;
+}
+.padding {
+  cursor: default !important;
+  background-color: var(--body-color) !important;
+  box-shadow: none !important;
+}
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 2.5rem;
+  background-color: var(--modal-event);
+  box-shadow: 0rem 0rem .3rem black;
+  border-radius: .5rem;
+  width: 35rem;
+  top: 10rem;
+  left: calc(50% - 17.5rem);
+  position: absolute;
+}
+#eventTitleInput {
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2.5rem;
+  border-radius: .3rem;
+  outline: none;
+  border: none;
+  box-shadow: 0rem 0rem .3rem gray;
+}
+#eventTitleInput.error {
+  border: .2rem solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: var(--header-color);
+}
+#saveButton, #closeButton {
+  background-color: var(--header-button);
+}
+#eventText {
+  font-size: 1.4rem;
+}
+#modalBackDrop {
+  display: none;
+  top: 0rem;
+  left: 0rem;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+
+footer {
+  color: var(--color-mode);
+}

@@ -54,21 +54,76 @@ export const partnerRouteProtection = (mode) => {
 //header
 
 export const handleIndexHeader = () => {
-    const buttonList = document.querySelectorAll('.index__nav > button')
-    const contactContainer = document.querySelector('#index__contact__container')
+    const userToken = localStorage.getItem("@uServ: userToken");
+    const navBar = document.querySelector('#usuario__header__nav');
+    const partners = document.createElement('button');
 
-    buttonList.forEach(button => {
-        button.addEventListener('click', () => {
-            if (button.innerText === 'Usuário'){
-                location.replace('./usuario/home.html')
-            } else if (button.innerText === 'Parceiro'){
-                location.replace('./parceiro/login.html')
-            } else if (button.innerText === 'Contato'){
-                contactContainer.classList.toggle('display-none');
-            }
-        })
+    partners.classList.add('btn--nav');
+    partners.innerText = 'Parceiros';
+    navBar.appendChild(partners);
+    partners.addEventListener('click', (event) => {
+        location.replace('./parceiro/cadastro.html');
     });
-}
+
+    if (userToken) {
+        const logout = document.createElement('button');
+        const userName = document.createElement('button');
+
+        logout.classList.add('btn--nav');
+        logout.innerText = 'Logout';
+        userName.classList.add('btn--nav');
+        userName.innerText = 'Nome do Usuário';
+        navBar.append(userName, logout);
+
+        logout.addEventListener('click', (event) => {
+            while (navBar.firstChild) {
+                navBar.removeChild(navBar.firstChild);
+            }
+            const partners = document.createElement('button');
+            const login = document.createElement('button');
+            const register = document.createElement('button');
+
+            partners.classList.add('btn--nav');
+            partners.innerText = 'Parceiros';
+            login.classList.add('btn--nav');
+            login.innerText = 'Login';
+            register.classList.add('btn--nav');
+            register.innerText = 'Cadastro';
+            navBar.append(partners, login, register);
+            toast('green', 'Desconectando');
+            localStorage.removeItem('@uServ: userToken');
+            login.addEventListener('click', (event) => {
+                location.replace('./usuario/login.html');
+            });
+            register.addEventListener('click', (event) => {
+                location.replace('./usuario/cadastro.html');
+            });
+            partners.addEventListener('click', (event) => {
+                location.replace('./parceiro/cadastro.html');
+            });
+        });
+
+        userName.addEventListener('click', (event) => {
+            location.replace('./usuario/home.html');
+        });
+    } else {
+        const login = document.createElement('button');
+        const register = document.createElement('button');
+
+        login.classList.add('btn--nav');
+        login.innerText = 'Login';
+        register.classList.add('btn--nav');
+        register.innerText = 'Cadastro';
+        navBar.append(login, register);
+
+        login.addEventListener('click', (event) => {
+            location.replace('./usuario/login.html');
+        });
+        register.addEventListener('click', (event) => {
+            location.replace('./usuario/cadastro.html');
+        });
+    };
+};
 
 export const handleUsuarioHeader = () => {
     const buttonList = document.querySelectorAll('#usuario__header__nav > button')
@@ -77,7 +132,7 @@ export const handleUsuarioHeader = () => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
                 location.replace('../usuario/login.html');
-            } else if (button.innerText === 'Cadastrar Parceiro'){
+            } else if (button.innerText === 'Cadastro'){
                 location.replace('../usuario/cadastro.html');
             } else if (button.innerText === 'Home'){
                 location.replace('../index.html');

@@ -114,9 +114,14 @@ button{
     font-weight: bold;
 }
 
+.font-title--small {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .font-tag {
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .font-tag--bold {
@@ -131,6 +136,11 @@ button{
 
 .font-p-normal--solid {
     font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.font-medium--normal {
+    font-size: 1.4rem;
     font-weight: 400;
 }
 

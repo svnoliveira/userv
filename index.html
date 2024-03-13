@@ -27,7 +27,8 @@
             </a>
             <div class="usuario__header__location">
                 <div class="dropdown">
-                    <input class="font-p-normal" name="location-search" type="text" placeholder="Selecione uma localização" disabled>
+                    <input class="font-p-normal" name="location-search" type="text"
+                        placeholder="Selecione uma localização" disabled>
                     <script id="cityData" type="application/json"></script>
                     <div class="dropdown-content search">
                     </div>
@@ -47,8 +48,8 @@
     <main>
         <section id="index__text__section">
             <div id="index__text__title">
-                <h1 class="font-title--big">Conectando você à sua Solução!</h1>
                 <img src="./src/image/index-collage.png" alt="Três pequenas fotos de pessoas de negócios">
+                <h1 class="font-title--big">Conectando você à sua Solução!</h1>
             </div>
             <div id="usuario__search__box">
                 <input class="font-p-normal" type="text" placeholder="Busca de serviços">
@@ -59,26 +60,27 @@
                 <h2>Categorias</h2>
                 <ul></ul>
             </section>
-            <section class="index__text__list">
+            <section class="index__search__list">
                 <div class="usuario__search__header">
                     <h2>Profissionais de : <span id="usuario__search__location">Todo Brasil</span></h2>
                     <button id="clear-button" class="btn--blue--tiny">Limpar</button>
                 </div>
                 <ul class="usuario__search__list">
-                    <li class="parceiro__card">
+                    <!-- <li class="parceiro__card">
                         <img src="../src/image/parceiros/base-thumbnail.png" alt="Imagem relacionada ao parceiro">
                         <div class="parceiro__card__text-box">
                             <h3>Nome do Parceiro</h3>
                             <div class="parceiro__card__price">
-                                <span class="font-small--blue">Preço inicial: </span><span class="font-small--blue">99.99R$</span>
+                                <span class="font-small--blue">Preço inicial: </span><span
+                                    class="font-small--blue">99.99R$</span>
                             </div>
-                            
+
                         </div>
                         <div class="parceiro__card__category">
-                                <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
-                                <span>Consultoria</span>
+                            <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
+                            <span>Consultoria</span>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
         </section>
@@ -91,21 +93,23 @@
                     </div>
                     <div class="range">
                         <div class="range-slider">
-                          <span class="range-selected"></span>
+                            <span class="range-selected"></span>
                         </div>
                         <div class="range-input">
-                          <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="50">
-                          <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="50">
+                            <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="50">
+                            <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="50">
                         </div>
                         <div class="range-price-container">
                             <div class="range-price">
-                              <label for="min" class="font-p-normal">Min</label>
-                              <input disabled placeholder="0" class="font-p-normal" type="number" id="min" name="min" value="300">
-                              <span class="font-p-normal">R$</span>
+                                <label for="min" class="font-p-normal">Min</label>
+                                <input disabled placeholder="0" class="font-p-normal" type="number" id="min" name="min"
+                                    value="300">
+                                <span class="font-p-normal">R$</span>
                             </div>
                             <div class="range-price">
                                 <label for="max" class="font-p-normal">Max</label>
-                                <input disabled placeholder="0" class="font-p-normal" type="number" id="max" name="max" value="700">
+                                <input disabled placeholder="0" class="font-p-normal" type="number" id="max" name="max"
+                                    value="700">
                                 <span class="font-p-normal">R$</span>
                             </div>
                         </div>
@@ -120,10 +124,95 @@
                     </div>
                 </aside>
             </div>
-            <div id="index__text">
-                <p class="font-p-normal">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+            <a href="./usuario/home.html" class="index__text">
+                <div>
+                    <img class="topic-image" src="./src/image/home/about-us.png" alt="ícone da uServ">
+                    <b class="font-title--normal">Sobre Nós</b>
+                </div>
+                <p class="font-p-normal--solid">The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+                    below for those interested.
                     Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also</p>
-            </div>
+            </a>
+            <a href="./usuario/home.html" class="index__text">
+                <div>
+                    <img class="topic-image" src="./src/image/home/work.png" alt="ícone da uServ">
+                    <b class="font-title--small">Como Funciona</b>
+                </div>
+                <ol>
+                    <li class="font-p-normal--solid">The standard chunk of Lorem Ipsum used since the 1500s.</li>
+                    <li class="font-p-normal--solid">The standard chunk of Lorem Ipsum used since the 1500s.</li>
+                    <li class="font-p-normal--solid">The standard chunk of Lorem Ipsum used since the 1500s.</li>
+                </ol>
+            </a>
+            <a href="./usuario/home.html" class="index__text">
+                <div>
+                    <img class="topic-image" src="./src/image/home/blog.png" alt="ícone da uServ">
+                    <b class="font-title--normal">Blog</b>
+                </div>
+                <div class="index__blog">
+                    <ul class="index__blog__list">
+                        <li>
+                            <h2 class="font-tittle--normal">Área digital</h2>
+                            <div class="blog__tag">
+                                <img src="./src/image/index-profile.png" alt="foto do autor">
+                                <span class="font-tag">Rafael Castro</span>
+                            </div>
+                            <p class="font-medium--normal">There are many variations of passages of Lorem Ipsum available, but
+                                the majority have suffered alteration in some form, by injected humour, or randomised
+                                words which don't look
+                            </p>
+                        </li>
+                        <li>
+                            <h2 class="font-tittle--normal">Busca intuitiva</h2>
+                            <div class="blog__tag">
+                                <img src="./src/image/index-profile.png" alt="foto do autor">
+                                <span class="font-tag">Rafael Castro</span>
+                            </div>
+                            <p class="font-medium--normal">There are many variations of passages of Lorem Ipsum available, but
+                                the majority have suffered alteration in some form, by injected humour, or randomised
+                                words which don't look.
+                            </p>
+                        </li>
+                        <li>
+                            <h2 class="font-tittle--normal">Dicas Precisas</h2>
+                            <div class="blog__tag">
+                                <img src="./src/image/index-profile.png" alt="foto do autor">
+                                <span class="font-tag">Rafael Castro</span>
+                            </div>
+                            <p class="font-medium--normal">There are many variations of passages of Lorem Ipsum available, but
+                                the majority have suffered alteration in some form, by injected humour, or randomised
+                                words which don't look.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </a>
+            <a href="./usuario/home.html" class="index__text">
+                <div>
+                    <img class="topic-image" src="./src/image/home/faq.png" alt="ícone da uServ">
+                    <b class="font-title--normal">FAQ.</b>
+                </div>
+                <ol>
+                    <li>
+                        <span class="font-title--small">Contrary to popular belief, Lorem Ipsum?</span>
+                        <p class="font-medium--normal">need to be sure there isn't anything embarrassing hidden in the
+                            middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                            chunks as necessary, making this the</p>
+                    </li>
+                    <li>
+                        <span class="font-title--small">Contrary to popular belief, Lorem Ipsum?</span>
+                        <p class="font-medium--normal">need to be sure there isn't anything embarrassing hidden in the
+                            middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                            chunks as necessary, making this the</p>
+                    </li>
+                    <li>
+                        <span class="font-title--small">Contrary to popular belief, Lorem Ipsum?</span>
+                        <p class="font-medium--normal">need to be sure there isn't anything embarrassing hidden in the
+                            middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                            chunks as necessary, making this the</p>
+                    </li>
+                </ol>
+            </a>
         </section>
     </main>
     <section id="modal">
@@ -160,7 +249,7 @@
             </div>
         </dialog>
     </section>
-    <footer class="font-p-normal">Todos Direitos reservados</footer>
+    <footer class="font-p-normal--solid">Todos Direitos reservados</footer>
 </body>
 
 </html>

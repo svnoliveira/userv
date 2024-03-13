@@ -1,6 +1,6 @@
-import { handleColaboradorHeader, supplierRouteProtection, toast } from "../render.js";
+import { handleParceiroHeader, partnerRouteProtection, toast } from "../render.js";
 
-supplierRouteProtection("open");
+partnerRouteProtection("open");
 
 const handleRecovery = () => {
   const submit = document.querySelector("#recovery--button");
@@ -74,5 +74,5 @@ const handleRecovery = () => {
   });
 };
 
-handleColaboradorHeader();
+handleParceiroHeader();
 handleRecovery();

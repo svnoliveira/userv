@@ -45,12 +45,13 @@
         <section class="usuario__list__container">
             <div class="usuario__search">
                 <div>
-                    <h1 class="font-title--big">Colaboradores</h1>
-                    <p class="font-p-normal">Faça sua pesquisa entre os colaboradores cadastrados</p>
+                    <h1 class="font-title--big">Profissionais</h1>
+                    <p class="font-p-normal">Faça sua pesquisa entre os profissionais cadastrados</p>
                 </div>
                 <div id="usuario__search__box">
-                    <input class="font-p-normal" type="text" placeholder="Digite para pesquisar entre nossos colaboradores">
+                    <input class="font-p-normal" type="text" placeholder="Digite para pesquisar entre nossos parceiros">
                     <button>Pesquisar</button>
+                    <img src="../src/image/icons/filter.svg" alt="Ícone de filtro">
                 </div>
             </div>
             <div>
@@ -65,22 +66,22 @@
                     </div>
                 </div>
                 <ul class="usuario__search__list">
-                    <!-- <li class="colaborador__card">
-                        <img src="../src/image/colaboradores/base-thumbnail.png" alt="Imagem relacionada ao colaborador">
-                        <div class="colaborador__card__text-box">
-                            <h3 class="font-title--normal">Nome do Colaborador</h3>
-                            <div class="colaborador__card__price">
+                    <!-- <li class="parceiro__card">
+                        <img src="../src/image/parceiros/base-thumbnail.png" alt="Imagem relacionada ao parceiro">
+                        <div class="parceiro__card__text-box">
+                            <h3 class="font-title--normal">Nome do Parceiro</h3>
+                            <div class="parceiro__card__price">
                                 <span class="font-p-normal">Preço inicial: </span><span class="font-p-normal">99.99R$</span>
                             </div>
-                            <div class="colaborador__card__detail">
+                            <div class="parceiro__card__detail">
                                 <p class="font-p-normal">Cidade, Endereço</p>
-                                <div class="colaborador__card__category">
+                                <div class="parceiro__card__category">
                                     <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
                                     <span>Consultoria</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="colaborador__card__rating">
+                        <div class="parceiro__card__rating">
                             <img class="star" src="../src/image/icons/star.svg" alt="Ícone de estrela">
                             <span class="font-p-normal--solid">5</span>
                         </div>
@@ -88,9 +89,12 @@
                 </ul>
             </div>
         </section>
-        <section class="usuario__filter">
+        <section class="usuario__filter hidden">
             <aside>
-                <h2 class="font-title--normal">Filtros</h2>
+                <div class="filter__header">
+                    <h2 class="font-title--normal">Filtros</h2>
+                    <span class="font-title--normal">X</span>
+                </div>
                 <div class="range">
                     <div class="range-slider">
                       <span class="range-selected"></span>
@@ -153,11 +157,11 @@
             <dialog id="modal__controller">
                 <div id="modal__container">
                     <div class="modal__header">
-                        <h2 class="font-title--normal">Nome Do colaborador</h2>
+                        <h2 class="font-title--normal">Nome Do parceiro</h2>
                         <button class="btn--nav">X</button>
                     </div>
                     <div class="modal__info">
-                        <img src="../src/image/colaboradores/base-thumbnail.png" alt="Imagem relacionada ao colaborador">
+                        <img src="../src/image/parceiros/base-thumbnail.png" alt="Imagem relacionada ao parceiro">
                         <div class="modal__contact">
                             <h2 class="font-p-normal--solid">Contato</h2>
                             <span class="font-p-normal--solid phone">(XX) 98888777</span>
@@ -176,7 +180,7 @@
                             <li class="font-p-normal">Serviço 5</li>
                         </ul>
                     </div>
-                    <div class="colaborador__card__category">
+                    <div class="parceiro__card__category">
                         <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
                         <span>Consultoria</span>
                     </div>

@@ -4,7 +4,8 @@ import {
   handleSearchButtons,
   handlePriceRange,
   handleUFSelector,
-  renderSupplierList,
+  renderPartnerList,
+  handleFilterDisplay,
 } from "./render.js";
 
 userRouteProtection("closed");
@@ -13,5 +14,6 @@ handleUsuarioHeader();
 handleUFSelector();
 handlePriceRange();
 handleCategoryFilters();
-renderSupplierList();
+renderPartnerList();
 handleSearchButtons();
+handleFilterDisplay();

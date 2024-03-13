@@ -1,7 +1,7 @@
-import { handleColaboradorHeader, supplierRouteProtection } from "../render.js";
-import { mockSupplierLogin } from "../requests.js";
+import { handleParceiroHeader, partnerRouteProtection } from "../render.js";
+import { mockPartnerLogin } from "../requests.js";
 
-supplierRouteProtection("open");
+partnerRouteProtection("open");
 
 const handleLogin = () => {
 
@@ -14,9 +14,9 @@ const handleLogin = () => {
         const password = inputList[1].value
 
         // await loginUser(userName, password)
-        mockSupplierLogin(userName, password);
+        mockPartnerLogin(userName, password);
     })
 }
 
-handleColaboradorHeader();
+handleParceiroHeader();
 handleLogin();

@@ -1,4 +1,4 @@
-import { handleColaboradorHeader, supplierRouteProtection } from "../render.js";
+import { handleParceiroHeader, partnerRouteProtection } from "../render.js";
 
-supplierRouteProtection('closed');
-handleColaboradorHeader();
+partnerRouteProtection('closed');
+handleParceiroHeader();

@@ -1,5 +1,5 @@
-import { historyFromSupplier } from "../../data/history.js";
-import { supplierList } from "../../data/suppliers.js";
+import { historyFromPartner } from "../../data/history.js";
+import { partnerList } from "../../data/partners.js";
 import { formatPrice } from "../render.js";
 
 export const handleCalendar = () => {
@@ -180,7 +180,7 @@ export const handleCalendar = () => {
 export const renderHistory = () => {
   const tableBody = document.querySelector('.styled-table tbody');
 
-  historyFromSupplier.map((entry) => {
+  historyFromPartner.map((entry) => {
     const tableRow = document.createElement('tr');
     const date = document.createElement('td');
     const client = document.createElement('td');
@@ -213,11 +213,11 @@ export const renderProfile = () => {
   const profilePictures = document.querySelector('.profile__pictures');
 
   //api request para pegar o usuário logado
-  const user = supplierList[0];
+  const user = partnerList[0];
 
   name.innerText = user.name;
   address.innerText = `${user.address.city}, ${user.address.uf}, ${user.address.street}, ${user.address.number}`;
-  heroImage.src = '../src/image/colaboradores/base-wide.png'; //url de uma imagem em alta resolução;
+  heroImage.src = '../src/image/parceiros/base-wide.png'; //url de uma imagem em alta resolução;
   heroImage.alt = 'Imagem principal da empresa, ou logo';
   officialName.innerText = user.fantasyName;
   adminName.innerText = user.name;
@@ -238,7 +238,7 @@ export const renderServices = () => {
   const serviceContainer = document.querySelector('.alternating-colors');
 
   //api request para pegar os services do usuário logado 
-  const services = supplierList[0].services;
+  const services = partnerList[0].services;
 
   services.map((service) => {
     const serviceCard = document.createElement('li');

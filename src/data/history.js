@@ -1,4 +1,4 @@
-export const historyFromSupplier = [
+export const historyFromPartner = [
     {
         id: 1,
         date: '2024-01-14',

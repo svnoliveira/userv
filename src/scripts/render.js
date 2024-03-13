@@ -29,17 +29,17 @@ export const userRouteProtection = (mode) => {
     const userToken = localStorage.getItem("@uServ: userToken")
     if (mode === "open"){
         if (userToken){
-            location.replace('../painel/home.html');
+            location.replace('../usuario/home.html');
         }
     } else if (mode === "closed") {
         if (!userToken){
-            location.replace('../colaborador/login.html');
+            location.replace('../usuario/login.html');
         }
     }
 }
 
-export const supplierRouteProtection = (mode) => {
-    const userToken = localStorage.getItem("@uServ: supplierToken");
+export const partnerRouteProtection = (mode) => {
+    const userToken = localStorage.getItem("@uServ: partnerToken");
     if (mode === "open"){
         if (userToken){
             location.replace('../painel/home.html');
@@ -61,8 +61,8 @@ export const handleIndexHeader = () => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Usuário'){
                 location.replace('./usuario/home.html')
-            } else if (button.innerText === 'Colaborador'){
-                location.replace('./colaborador/login.html')
+            } else if (button.innerText === 'Parceiro'){
+                location.replace('./parceiro/login.html')
             } else if (button.innerText === 'Contato'){
                 contactContainer.classList.toggle('display-none');
             }
@@ -77,7 +77,7 @@ export const handleUsuarioHeader = () => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
                 location.replace('../usuario/login.html');
-            } else if (button.innerText === 'Cadastrar Colaborador'){
+            } else if (button.innerText === 'Cadastrar Parceiro'){
                 location.replace('../usuario/cadastro.html');
             } else if (button.innerText === 'Home'){
                 location.replace('../index.html');
@@ -92,22 +92,22 @@ export const handleUsuarioHeader = () => {
     });
 };
 
-export const handleColaboradorHeader = () => {
-    const buttonList = document.querySelectorAll('#supplier__header__nav > button')
+export const handleParceiroHeader = () => {
+    const buttonList = document.querySelectorAll('#partner__header__nav > button')
 
     buttonList.forEach(button => {
         button.addEventListener('click', () => {
             if (button.innerText === 'Login'){
-                location.replace('../colaborador/login.html');
-            } else if (button.innerText === 'Cadastrar Colaborador'){
-                location.replace('../colaborador/cadastro.html');
+                location.replace('../parceiro/login.html');
+            } else if (button.innerText === 'Cadastrar Parceiro'){
+                location.replace('../parceiro/cadastro.html');
             } else if (button.innerText === 'Home'){
                 location.replace('../index.html');
             } else if (button.innerText === 'Logout'){
                 toast('green', 'Desconectando');
-                localStorage.removeItem('@uServ: supplierToken');
+                localStorage.removeItem('@uServ: partnerToken');
                 setTimeout(() =>{
-                    location.replace('../colaborador/login.html');
+                    location.replace('../parceiro/login.html');
                 },1500);
             };
         });

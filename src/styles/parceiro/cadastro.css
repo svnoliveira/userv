@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url("../../image/colaboradores/office6.png");
+    background-image: url("../../image/parceiros/office6.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
@@ -92,7 +92,7 @@ main {
     color: var(--color-brand-1);
 }
 
-#supplier__form > .supplier__register > div{
+#partner__form > .partner__register > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,8 +102,8 @@ main {
     width: min(40rem, 90%);
 }
 
-.supplier__register select,
-.supplier__register input {
+.partner__register select,
+.partner__register input {
     border: none;
     border-bottom: 0.2rem rgba(67, 50, 142, 0.15) solid;
     padding: 2rem;
@@ -111,26 +111,26 @@ main {
     color: #757575;
 }
 
-.supplier__register select:focus,
-.supplier__register input:focus {
+.partner__register select:focus,
+.partner__register input:focus {
     outline: solid var(--color-brand-2) 0.2rem;
     border-radius: 0.5rem;
 }
 
-.supplier__register label {
+.partner__register label {
     visibility: hidden;
     margin-right: auto;
 }
 
-.supplier__register > p {
+.partner__register > p {
     text-align: center;
 }
 
-.supplier__register button {
+.partner__register button {
     margin-top: 6rem;
 }
 
-.supplier__terms {
+.partner__terms {
     width: 100%;
     display: flex;
     gap: 0.4rem;
@@ -139,12 +139,12 @@ main {
     margin: 3rem 0;
 }
 
-.supplier__terms input{
+.partner__terms input{
     height: 1.5rem;
     width: 1.5rem;
 }
 
-.supplier__terms .font-small--blue{
+.partner__terms .font-small--blue{
     cursor: pointer;
 }
 
@@ -183,7 +183,7 @@ label > p {
     text-align: center;
 }
 
-.supplier__plan__container {
+.partner__plan__container {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -217,20 +217,20 @@ label > p {
 
 #modal__plan__card--new,
 #card--basic {
-    background-image: url("../../image/colaboradores/plans/overlay-light.png");   
+    background-image: url("../../image/parceiros/plans/overlay-light.png");   
 }
 
 #modal__plan__card--new:hover,
 #card--basic:hover {
-    background-image: url("../../image/colaboradores/plans/overlay-gradient.png");
+    background-image: url("../../image/parceiros/plans/overlay-gradient.png");
 }
 
 #card--advanced {
-    background-image: url("../../image/colaboradores/plans/overlay-ligh-flipt.png");
+    background-image: url("../../image/parceiros/plans/overlay-ligh-flipt.png");
 }
 
 #card--advanced:hover {
-    background-image: url("../../image/colaboradores/plans/overlay-gradien-flipt.png");
+    background-image: url("../../image/parceiros/plans/overlay-gradien-flipt.png");
 }
 
 #modal__plan__card--new button{

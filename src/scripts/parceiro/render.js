@@ -50,7 +50,7 @@ export const renderPlanModal =  (card, name, price) => {
 
 export const handleLabels = () => {
   const inputs = document.querySelectorAll(
-    ".supplier__register input, .supplier__register select"
+    ".partner__register input, .partner__register select"
   );
 
   inputs.forEach((input) => {
@@ -165,11 +165,11 @@ export const handleFileDrop = () => {
       }
     };
   };
-  setupDragAndDrop("custom-file-upload", "supplier__fileInput");
-  setupDragAndDrop("custom-doc-upload", "supplier__docInput");
+  setupDragAndDrop("custom-file-upload", "partner__fileInput");
+  setupDragAndDrop("custom-doc-upload", "partner__docInput");
 };
 
-export const handleSuplierForm = () => {
+export const handlePartnerForm = () => {
   const step1 = document.querySelector(".step-1");
   const step2 = document.querySelector(".step-2");
   const step3 = document.querySelector(".step-3");
@@ -183,7 +183,7 @@ export const handleSuplierForm = () => {
     "register__document--owner-password"
   );
   const confirm = document.getElementById("register__document--owner-confirm");
-  const buttonStep1 = document.getElementById("supplier--button-step1");
+  const buttonStep1 = document.getElementById("partner--button-step1");
 
   buttonStep1.addEventListener("click", (event) => {
     event.preventDefault();
@@ -224,9 +224,9 @@ export const handleSuplierForm = () => {
     "#register__document--category"
   );
   const contract = document.querySelector("#register__document--contract");
-  const image = document.querySelector("#supplier__fileInput");
-  const docFile = document.querySelector("#supplier__docInput");
-  const buttonStep2 = document.querySelector("#supplier--button-step2");
+  const image = document.querySelector("#partner__fileInput");
+  const docFile = document.querySelector("#partner__docInput");
+  const buttonStep2 = document.querySelector("#partner--button-step2");
 
   documentType.addEventListener("change", (event) => {
     const label = document.querySelector("#register__document--input-label");
@@ -294,7 +294,7 @@ export const handleSuplierForm = () => {
   const street = document.querySelector('#register__address--street');
   const number = document.querySelector('#register__address--number');
   const complement = document.querySelector('#register__address--complement');
-  const buttonStep3 = document.querySelector('#supplier--button-step3');
+  const buttonStep3 = document.querySelector('#partner--button-step3');
 
   buttonStep3.addEventListener('click', (event) => {
     event.preventDefault();

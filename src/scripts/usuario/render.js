@@ -1,10 +1,10 @@
 import { brazilianStates } from "../../data/states.js";
-import { supplierList } from "../../data/suppliers.js";
+import { partnerList } from "../../data/partners.js";
 import { formatPhoneNumber, formatPrice, getCategoryImageInfo } from "../render.js";
 import { getCitiesFromUF } from "./requests.js";
 
 
-export const renderModal = (supplier) => {
+export const renderModal = (partner) => {
   const modal = document.querySelector('#modal__controller');
   const name = document.querySelector('.modal__header > h2');
   const xButton = document.querySelector('.modal__header > button');
@@ -15,18 +15,18 @@ export const renderModal = (supplier) => {
   const price = document.querySelector('.modal__services > .price');
   const serviceList = document.querySelector('.modal__services ul');
 
-  name.innerText = supplier.fantasyName;
-  image.src = supplier.image;
-  phone.innerText = formatPhoneNumber(supplier.phone);
-  email.innerText = supplier.email;
-  address.innerText = `${supplier.address.city}, ${supplier.address.uf}`;
-  price.innerText = `Preços à partir de ${formatPrice(supplier.startingPrice)}`;
+  name.innerText = partner.fantasyName;
+  image.src = partner.image;
+  phone.innerText = formatPhoneNumber(partner.phone);
+  email.innerText = partner.email;
+  address.innerText = `${partner.address.city}, ${partner.address.uf}`;
+  price.innerText = `Preços à partir de ${formatPrice(partner.startingPrice)}`;
 
   while (serviceList.firstChild) {
     serviceList.removeChild(serviceList.firstChild);
   };
 
-  supplier.services.map((service) => {
+  partner.services.map((service) => {
     const newService = document.createElement('li');
     newService.classList.add('font-p-normal');
     newService.innerText = service.entry;
@@ -46,17 +46,17 @@ export const renderModal = (supplier) => {
   });
 };
 
-export const renderSupplierList = () => {
+export const renderPartnerList = () => {
   //filter by city
   const userCity = localStorage.getItem("@userv: city") || "";
   const location = document.getElementById("usuario__search__location");
 
-  let filteredList = supplierList; //usando dados mockados, adicionar integração a API
+  let filteredList = partnerList; //usando dados mockados, adicionar integração a API
 
   if (userCity.length > 0) {
     location.innerText = userCity;
     filteredList = filteredList.filter(
-      (supplier) => supplier.address.city === userCity
+      (partner) => partner.address.city === userCity
     );
   }
 
@@ -65,9 +65,9 @@ export const renderSupplierList = () => {
   if (categoryList.length > 0) {
     let newList = [];
     categoryList.forEach((category) => {
-      filteredList.map((supplier) => {
-        if (category.innerText === supplier.category) {
-          newList.push(supplier);
+      filteredList.map((partner) => {
+        if (category.innerText === partner.category) {
+          newList.push(partner);
         }
       });
     });
@@ -78,17 +78,21 @@ export const renderSupplierList = () => {
   const rangePrice = document.querySelectorAll(".range-price input");
   const minPrice = rangePrice[0].value;
   const maxPrice = rangePrice[1].value;
+  const filter = document.querySelector('.usuario__filter');
 
-  filteredList = filteredList.filter(
-    (supplier) =>
-      supplier.startingPrice >= minPrice && supplier.startingPrice <= maxPrice
-  );
+  if (!filter.classList.contains('hidden')) {
+    filteredList = filteredList.filter(
+      (partner) =>
+        partner.startingPrice >= minPrice && partner.startingPrice <= maxPrice
+    );
+  };
+
 
   //filter by input
   const input = document.querySelector("#usuario__search__box input");
   if (input.value.length > 0) {
-    filteredList = filteredList.filter((supplier) =>
-      supplier.fantasyName.toLowerCase().includes(input.value.toLowerCase())
+    filteredList = filteredList.filter((partner) =>
+      partner.fantasyName.toLowerCase().includes(input.value.toLowerCase())
     );
   }
 
@@ -111,14 +115,14 @@ export const renderSupplierList = () => {
     const card = document.createElement("li");
     const message = document.createElement("p");
 
-    message.classList.add("font-p-normal--solid", "colaborador__card__empty");
-    message.innerText = "Nenhum colaborador encontrado.";
+    message.classList.add("font-p-normal--solid", "parceiro__card__empty");
+    message.innerText = "Nenhum parceiro encontrado.";
     card.appendChild(message);
     listContainer.appendChild(card);
     return;
   } else {
 
-    filteredList.map((supplier) => {
+    filteredList.map((partner) => {
       const card = document.createElement("li");
       const image = document.createElement("img");
       const textBox = document.createElement("div");
@@ -135,30 +139,30 @@ export const renderSupplierList = () => {
       const star = document.createElement("img");
       const rating = document.createElement("span");
 
-      card.classList.add("colaborador__card");
-      image.src = supplier.image;
-      image.alt = `Logo ou imagem da empresa ${supplier.fantasyName}`;
-      textBox.classList.add("colaborador__card__text-box");
+      card.classList.add("parceiro__card");
+      image.src = partner.image;
+      image.alt = `Logo ou imagem da empresa ${partner.fantasyName}`;
+      textBox.classList.add("parceiro__card__text-box");
       name.classList.add("font-title--normal");
-      name.innerText = supplier.fantasyName;
-      priceContainer.classList.add("colaborador__card__price");
+      name.innerText = partner.fantasyName;
+      priceContainer.classList.add("parceiro__card__price");
       priceCall.classList.add("font-p-normal");
       priceCall.innerText = "Preço inicial: ";
       price.classList.add("font-p-normal");
-      price.innerText = formatPrice(supplier.startingPrice);
-      detailContainer.classList.add("colaborador__card__detail");
+      price.innerText = formatPrice(partner.startingPrice);
+      detailContainer.classList.add("parceiro__card__detail");
       address.classList.add("font-p-normal");
-      address.innerText = `${supplier.address.city} - ${supplier.address.uf}`;
-      categoryContainer.classList.add("colaborador__card__category");
-      categoryImg.src = getCategoryImageInfo("src", supplier.category);
-      categoryImg.alt = getCategoryImageInfo("alt", supplier.category);
-      categoryName.innerText = supplier.category;
-      ratingContainer.classList.add("colaborador__card__rating");
+      address.innerText = `${partner.address.city} - ${partner.address.uf}`;
+      categoryContainer.classList.add("parceiro__card__category");
+      categoryImg.src = getCategoryImageInfo("src", partner.category);
+      categoryImg.alt = getCategoryImageInfo("alt", partner.category);
+      categoryName.innerText = partner.category;
+      ratingContainer.classList.add("parceiro__card__rating");
       star.classList.add("star");
       star.src = "../src/image/icons/star.svg";
       star.alt = "Ícone de uma estrela";
       rating.classList.add("font-p-normal--solid");
-      rating.innerText = "5"; //adicionar chave de avaliação do colaborador
+      rating.innerText = "5"; //adicionar chave de avaliação do parceiro
 
       listContainer.appendChild(card);
       card.append(image, textBox, ratingContainer);
@@ -171,7 +175,7 @@ export const renderSupplierList = () => {
       card.addEventListener('click', (event) =>{
         event.preventDefault();
         const modal = document.querySelector('#modal__controller');
-        renderModal(supplier);
+        renderModal(partner);
         modal.showModal();
       });
     });
@@ -197,7 +201,7 @@ const renderCityList = (list) => {
       container.classList.remove("show");
       localStorage.setItem("@userv: city", `${city.nome}`);
       input.value = city.nome;
-      renderSupplierList();
+      renderPartnerList();
     });
   });
 };
@@ -301,7 +305,7 @@ export const handlePriceRange = () => {
   });
 
   filterButton.addEventListener("click", (event) => {
-    renderSupplierList();
+    renderPartnerList();
     event.preventDefault();
   });
 };
@@ -313,7 +317,7 @@ export const handleCategoryFilters = () => {
     category.addEventListener("click", (event) => {
       event.preventDefault();
       category.classList.toggle("category--selected");
-      renderSupplierList();
+      renderPartnerList();
     });
   });
 };
@@ -334,7 +338,7 @@ export const handleSearchButtons = () => {
     localStorage.removeItem("@userv: city");
     location.innerText = "Todo Brasil";
     input.value = "";
-    renderSupplierList();
+    renderPartnerList();
   });
 
   sortButtons.forEach((button) => {
@@ -343,19 +347,42 @@ export const handleSearchButtons = () => {
       if (!button.classList.contains("sort--selected")) {
         alphabetical.classList.toggle("sort--selected");
         price.classList.toggle("sort--selected");
-        renderSupplierList();
+        renderPartnerList();
       }
     });
   });
 
   searchButton.addEventListener("click", (event) => {
     event.preventDefault();
-    renderSupplierList();
+    renderPartnerList();
   });
 
   input.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-      renderSupplierList();
+      renderPartnerList();
     };
   });  
+};
+
+export const handleFilterDisplay = () => {
+  const filter = document.querySelector('.usuario__filter');
+  const input = document.querySelector('#usuario__search__box input');
+  const xButton = document.querySelector('.filter__header span');
+  const filterButton = document.querySelector('#usuario__search__box img');
+
+  input.addEventListener('click', (event) => {
+    filter.classList.contains('hidden') && filter.classList.remove('hidden');
+  });
+
+  xButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    filter.classList.add('hidden');
+  });
+
+  filterButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    filter.classList.toggle('hidden');
+  });
 };

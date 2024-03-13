@@ -21,13 +21,28 @@
 
 <body>
     <header>
-        <div id="index__header__logo-container" role="img" aria-label="Logo da empresa Userv, pequeno ícone da letra U">
+        <div>
+            <a href="../index.html">
+                <img src="../src/image/icons/userv-medium.png" alt="logo userv">
+            </a>
+            <div class="usuario__header__location">
+                <div class="dropdown">
+                    <input class="font-p-normal" name="location-search" type="text" placeholder="Selecione uma localização" disabled>
+                    <script id="cityData" type="application/json"></script>
+                    <div class="dropdown-content search">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="font-p-normal dropbtn">Selecione...</div>
+                    <div class="dropdown-content uf">
+                    </div>
+                </div>
+            </div>
+            <nav id="usuario__header__nav">
+                <button class="btn--nav">Parceiros</button>
+                <button class="btn--nav">Logout</button>
+            </nav>
         </div>
-        <nav id="index__header__nav" class="index__nav">
-            <button class="btn--nav">Usuário</button>
-            <button class="btn--nav">Parceiro</button>
-            <button class="contact-btn btn--white--wide">Contato</button>
-        </nav>
     </header>
     <main>
         <section id="index__text__section">
@@ -35,54 +50,116 @@
                 <h1 class="font-title--big">Conectando você à sua Solução!</h1>
                 <img src="./src/image/index-collage.png" alt="Três pequenas fotos de pessoas de negócios">
             </div>
-            <div>
-                <span class="font-tag">Seja parceiro!</span>
-                <p class="font-p-normal">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                    in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                    are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing display-none
-                    in the</p>
+            <div id="usuario__search__box">
+                <input class="font-p-normal" type="text" placeholder="Busca de serviços">
+                <button><img src="./src/image/icons/magnifying-glass.svg" alt="Ícone de lupa, para pesquisar."></button>
+                <img src="./src/image/icons/filter.svg" alt="Ícone de filtro">
             </div>
-            <div>
-                <ul class="index__text__list">
-                    <li>
-                        <h2 class="font-title--normal">Área digital</h2>
-                        <p class="font-p-normal">Atuamos como uma vitrine online.
-                        </p>
-                    </li>
-                    <li>
-                        <h2 class="font-title--normal">Busca intuitiva</h2>
-                        <p class="font-p-normal">Interface amigável e filtros de busca.</p>
-                    </li>
-                    <li>
-                        <h2 class="font-title--normal">Dicas Precisas</h2>
-                        <p class="font-p-normal">Sobre os serviços prestados e dicas.</p>
+            <section class="index__text__filter">
+                <h2>Categorias</h2>
+                <ul></ul>
+            </section>
+            <section class="index__text__list">
+                <div class="usuario__search__header">
+                    <h2>Profissionais de : <span id="usuario__search__location">Todo Brasil</span></h2>
+                    <button id="clear-button" class="btn--blue--tiny">Limpar</button>
+                </div>
+                <ul class="usuario__search__list">
+                    <li class="parceiro__card">
+                        <img src="../src/image/parceiros/base-thumbnail.png" alt="Imagem relacionada ao parceiro">
+                        <div class="parceiro__card__text-box">
+                            <h3>Nome do Parceiro</h3>
+                            <div class="parceiro__card__price">
+                                <span class="font-small--blue">Preço inicial: </span><span class="font-small--blue">99.99R$</span>
+                            </div>
+                            
+                        </div>
+                        <div class="parceiro__card__category">
+                                <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
+                                <span>Consultoria</span>
+                        </div>
                     </li>
                 </ul>
-            </div>
-            <div id="index__text__logo-container" role="img" aria-label="Logo da empresa Userv de forma grande">
-            </div>
+            </section>
         </section>
         <section id="index__image__section">
-            <div id="index__contact__container" class="display-none">
-                <div>
-                    <span class="font-title--big">Contato</span>
-                    <div>
-                        <p class="font-p-normal">Whatsapp: (XX) 99999-9999</p>
-                        <p class="font-p-normal">Email: contato@userv.app</p>
-                        <p class="font-p-normal">Localização: RUA SUDARIO RODRIGUES GOMES, 884 - BAIRRO GOIAS - Araguari/MG</p>
+            <div class="usuario__filter hidden">
+                <aside>
+                    <div class="filter__header">
+                        <h2 class="font-title--normal">Filtros</h2>
+                        <span class="font-title--normal">X</span>
                     </div>
-                </div>
+                    <div class="range">
+                        <div class="range-slider">
+                          <span class="range-selected"></span>
+                        </div>
+                        <div class="range-input">
+                          <input placeholder="0" type="range" class="min" min="0" max="1000" value="300" step="50">
+                          <input placeholder="0" type="range" class="max" min="0" max="1000" value="700" step="50">
+                        </div>
+                        <div class="range-price-container">
+                            <div class="range-price">
+                              <label for="min" class="font-p-normal">Min</label>
+                              <input disabled placeholder="0" class="font-p-normal" type="number" id="min" name="min" value="300">
+                              <span class="font-p-normal">R$</span>
+                            </div>
+                            <div class="range-price">
+                                <label for="max" class="font-p-normal">Max</label>
+                                <input disabled placeholder="0" class="font-p-normal" type="number" id="max" name="max" value="700">
+                                <span class="font-p-normal">R$</span>
+                            </div>
+                        </div>
+                        <button class="btn--blue--normal">Filtrar por Preço</button>
+                    </div>
+                    <div>
+                        <h2>Ordernar por:</h2>
+                        <div id="usuario__search__sort">
+                            <button class="btn--blue--small sort--selected">A - Z</button>
+                            <button class="btn--blue--small">Preço</button>
+                        </div>
+                    </div>
+                </aside>
             </div>
             <div id="index__text">
                 <p class="font-p-normal">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
                     Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also</p>
             </div>
-            <nav class="index__nav">
-                <a href="usuario/home.html" class="btn--white--deep">Área do Usuário</a>
-                <a href="parceiro/login.html" class="btn--white--deep">Área do Parceiro</a>
-            </nav>
         </section>
     </main>
+    <section id="modal">
+        <dialog id="modal__controller">
+            <div id="modal__container">
+                <div class="modal__header">
+                    <h2 class="font-title--normal">Nome Do parceiro</h2>
+                    <button class="btn--nav">X</button>
+                </div>
+                <div class="modal__info">
+                    <img src="../src/image/parceiros/base-thumbnail.png" alt="Imagem relacionada ao parceiro">
+                    <div class="modal__contact">
+                        <h2 class="font-p-normal--solid">Contato</h2>
+                        <span class="font-p-normal--solid phone">(XX) 98888777</span>
+                        <span class="font-p-normal--solid email">email@email.com</span>
+                        <span class="font-p-normal--solid address">UF Rua XXXXXXX</span>
+                    </div>
+                </div>
+                <div class="modal__services">
+                    <span class="font-title--normal">Serviços</span>
+                    <span class="font-p-normal--solid price">Preço inicial: 999.99 R$</span>
+                    <ul>
+                        <li class="font-p-normal">Serviço 1</li>
+                        <li class="font-p-normal">Serviço 2</li>
+                        <li class="font-p-normal">Serviço 3</li>
+                        <li class="font-p-normal">Serviço 4</li>
+                        <li class="font-p-normal">Serviço 5</li>
+                    </ul>
+                </div>
+                <div class="parceiro__card__category">
+                    <img src="../src/image/icons/category/consultancy.svg" alt="Ícone de pessoas">
+                    <span>Consultoria</span>
+                </div>
+            </div>
+        </dialog>
+    </section>
     <footer class="font-p-normal">Todos Direitos reservados</footer>
 </body>
 

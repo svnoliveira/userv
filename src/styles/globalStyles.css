@@ -220,6 +220,12 @@ button {
     padding: 0.5rem 0 0.8rem 0;
 }
 
+.btn--blue--tiny {
+    width: 7rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.8rem 0;
+}
+.btn--blue--tiny,
 .btn--blue--normal,
 .btn--blue--small {
     font-weight: 400;
@@ -230,6 +236,7 @@ button {
     transition: 0.5s;
 }
 
+.btn--blue--tiny:hover,
 .btn--blue--normal:hover,
 .btn--blue--small:hover {
     border: 0.1rem var(--color-brand-2) solid;

@@ -3,12 +3,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
 }
 
 header {
     background-color: var(--color-mode);
-    height: 8dvh;
+    min-height: 8dvh;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
@@ -16,7 +17,7 @@ header {
     z-index: 2;
 }
 
-header>div {
+header > div {
     max-width: 140rem;
     margin: auto;
     display: flex;
@@ -114,17 +115,23 @@ header img {
 
 main {
     width: min(150rem, 90dvw);
-    height: 83rem;
-    position: absolute;
-    top: 10dvh;
-    left: 50%;
-    transform: translateX(-50%);
+    min-height: 83rem;
+    margin: 1dvh auto 0 auto;
     display: flex;
-    border-radius: 4rem 0 0 4rem;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.75);
+    border-radius: 4rem;
+
     box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.75);
+}
+
+#index__text__section {
+    padding: clamp(0.6rem, 4vw, 2rem);
+    border-radius: 4rem 0 0 4rem;
+    background-color: var(--color-mode);
+    width: 40%;
+    transform: scaleX(1.01);
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
 }
 
 /* search box */
@@ -148,7 +155,7 @@ main {
 
 #usuario__search__box input {
     width: 75%;
-    padding: 1.2rem 1rem;
+    padding: clamp(0.2rem, 1dvw, 1.2rem) clamp(0.1rem, 1dvw, 1rem);
     border: 0.2rem var(--color-brand-1) solid;
     border-radius: 1.5rem 0 0 1.5rem;
     border-right: none;
@@ -156,18 +163,18 @@ main {
 
 #usuario__search__box button {
     width: 12%;
-    padding: 1.2rem 1rem;
+    padding: clamp(0.2rem, 0.2dvw, 1.2rem) clamp(0.1rem, 0.2dvw, 1rem);
     border: 0.2rem var(--color-brand-1) solid;
     border-radius: 0 1.5rem 1.5rem 0;
     border-left: none;
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
     background-color: rgba(48, 153, 107, 0.15);
     cursor: pointer;
 }
 
 #usuario__search__box button img {
-    width: 3rem;
+    width: clamp(1.5rem, 3dvw, 3rem);
     height: 3rem;
 }
 
@@ -213,10 +220,6 @@ main {
 
 /* lista de parceiros/profissionais */
 
-.index__search__list {
-    height: 20rem;
-}
-
 .usuario__search__header {
     width: 100%;
     display: flex;
@@ -232,7 +235,6 @@ main {
 
 .usuario__search__list {
     width: 100%;
-    height: 100%;
     overflow-y: auto;
     margin: 1rem 0;
     display: flex;
@@ -256,21 +258,6 @@ main {
     width: 5rem;
     height: 5rem;
     border-radius: 0.4rem;
-}
-
-.parceiro__card__rating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
-    margin-left: auto;
-    gap: 0.5rem;
-    font-weight: bold;
-}
-
-.star {
-    width: 1.9rem;
-    height: 1.9rem;
 }
 
 .parceiro__card__text-box {
@@ -303,26 +290,17 @@ main {
     margin: 0 auto;
 }
 
-#index__text__section {
-    padding-left: clamp(0.6rem, 4vw, 2rem);
-    background-color: var(--color-mode);
-    width: 40%;
-    transform: scaleX(1.01);
-    display: flex;
-    flex-direction: column;
-}
-
 .usuario__filter {
     background-color: var(--color-mode);
-    width: 35rem;
-    height: 35rem;
+    width: min(35rem, 100%);
+    height: 40rem;
     border-radius: 3rem;
     padding: 1.8rem;
     z-index: 3;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20rem;
+    right: -40rem;
+    box-shadow: 0px 7px 17px -5px rgba(0, 0, 0, 0.75);
 }
 
 aside {
@@ -353,9 +331,10 @@ aside .filter__header span {
     cursor: pointer;
 }
 
-.usuario__list__container {
-    background-color: var(--color-mode);
-    width: 60%;
+#modal__container > .parceiro__card__category{
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
 }
 
 .range {
@@ -372,7 +351,7 @@ aside .filter__header span {
     width: 100%;
     height: 100%;
     position: absolute;
-    bottom: 10rem;
+    bottom: 11rem;
 }
 
 .range-slider {
@@ -446,6 +425,9 @@ aside .filter__header span {
     margin-right: auto;
 }
 
+
+/* text part */
+
 #index__text__title {
     display: flex;
     flex-direction: row;
@@ -454,7 +436,7 @@ aside .filter__header span {
 }
 
 #index__text__title>img {
-    width: 15em;
+    width: clamp(10em, 25%, 15em);
     height: auto;
     object-fit: contain;
     margin-right: 0.8rem;
@@ -491,6 +473,7 @@ aside .filter__header span {
 
 #index__image__section {
     width: 60%;
+    min-height: 100%;
     border-radius: 0 4rem 4rem 0;
     border: 1.5rem solid var(--color-mode);
     border-left: none;
@@ -501,15 +484,7 @@ aside .filter__header span {
     overflow: hidden;
     color: var(--color-mode);
     padding-right: 2rem;
-}
-
-#index__image__section::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    gap: 1.5rem;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -521,6 +496,12 @@ aside .filter__header span {
     text-decoration: none;
     z-index: 2;
 }
+
+.index__text ul,
+.index__text ol {
+    height: 100%;
+}
+
 
 .index__text b {
     margin-left: auto;
@@ -556,7 +537,7 @@ aside .filter__header span {
 
 .index__text ol li {
     position: relative;
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 1.5vw, 1.6rem);
     line-height: 2rem;
 }
 
@@ -582,10 +563,6 @@ aside .filter__header span {
 
 .index__text ol li:nth-child(even):before {
     border-color: var(--color-brand-2);
-}
-
-.index__blog {
-    height: 20rem;
 }
 
 #modal__controller {
@@ -670,8 +647,126 @@ aside .filter__header span {
 
 footer {
     text-align: center;
-    position: fixed;
     color: var(--color-mode);
     width: 100%;
-    bottom: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 1541px) {
+    .usuario__search__list {
+        justify-content: center;
+        padding-right: 2rem;
+    }
+    .parceiro__card{
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1090px) {
+    .usuario__header__location{
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    header > div {
+        justify-content: space-around;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    header nav button {
+        margin-right: 0;
+        position: static;
+        transform: none;
+        text-align: left;
+        padding: 1rem 0;
+    }
+    .index__blog__list{
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .index__blog__list >li{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1090px) {
+    .index__text__filter ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 740px) {
+
+    main {
+        position: relative;
+        overflow-x: hidden;
+        margin: 1dvh 0 0 auto;
+        border-radius: 4rem 0 0 4rem;
+        width: 98dvw;
+    }
+    
+    #index__image__section{
+        position: absolute;
+        z-index: 4;
+        width: 90%;
+        background-color: black;
+        border-radius: 4rem;
+        border-left: 0.5rem solid var(--color-mode);
+        border: 0.5rem solid var(--color-mode);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        min-height: 0;
+        padding: 3rem 2rem;
+        gap: 5rem;
+        transform: translateX(107%);
+        cursor: grab;
+    }
+    #index__text__section {
+        width: 100%;
+        border-radius: 4rem;
+    }
+    #index__text__title {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .index__text__filter ul{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .usuario__filter {
+        position: static;
+        box-shadow: none;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 660px) {
+    header > div {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    header nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .usuario__header__location input {
+        padding: 0 1rem;
+    }
+    .dropbtn {
+        padding: 0 1rem 0 1rem;
+    }
+}
+
+@media (max-width: 340px) {
+    .index__text__filter ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .index__text{
+        flex-direction: column;
+    }
 }

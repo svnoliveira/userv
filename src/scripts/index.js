@@ -1,5 +1,5 @@
 import { handleCategoryFilters, handleFilterDisplay, handlePriceRange, handleSearchButtons, handleUFSelector, renderIndexCategories, renderPartnerList } from "./indexSearchRender.js";
-import { handleIndexHeader } from "./render.js";
+import { handleIndexHeader, handleMobileDrag } from "./render.js";
 
 handleIndexHeader();
 renderIndexCategories();
@@ -10,3 +10,4 @@ handleCategoryFilters();
 renderPartnerList();
 handleSearchButtons();
 handleFilterDisplay();
+handleMobileDrag("#index__image__section");

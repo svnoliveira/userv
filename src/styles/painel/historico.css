@@ -11,7 +11,7 @@ main > :nth-child(2) {
 .styled-table {
     border-collapse: collapse;
     margin: 25px auto;
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 1.5vw, 1.6rem);
     width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }

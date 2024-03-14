@@ -4,6 +4,8 @@ body {
 
 main {
     overflow: auto;
+    width: min(145rem, 99%);
+    margin: 0 auto;
 }
 
 h1 {

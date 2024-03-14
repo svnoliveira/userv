@@ -33,3 +33,32 @@ footer {
     transform: translateX(-50%);
     color: var(--color-mode);
 }
+
+@media (max-width: 660px) {
+    section {
+        margin-right: 0;
+    }
+
+    header nav button {
+        margin-right: 0;
+    }
+
+    header img {
+        height: 5dvh;
+    }
+
+    header > div {
+        height: 100%;
+    }
+
+    nav .home {
+        display: none;
+    }
+
+    #partner__header__nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}

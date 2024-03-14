@@ -33,7 +33,7 @@ export const renderModal = (partner) => {
   const serviceList = document.querySelector(".modal__services ul");
 
   name.innerText = partner.fantasyName;
-  image.src = partner.image;
+  image.src = partner.image.slice(1);
   phone.innerText = formatPhoneNumber(partner.phone);
   email.innerText = partner.email;
   address.innerText = `${partner.address.city}, ${partner.address.uf}`;
@@ -149,7 +149,7 @@ export const renderPartnerList = () => {
       const categoryName = document.createElement("span");
 
       card.classList.add("parceiro__card");
-      image.src = partner.image;
+      image.src = partner.image.slice(1);
       image.alt = `Logo ou imagem da empresa ${partner.fantasyName}`;
       textBox.classList.add("parceiro__card__text-box");
 
@@ -158,7 +158,7 @@ export const renderPartnerList = () => {
       price.classList.add("font-small--blue");
       price.innerText = formatPrice(partner.startingPrice);
       categoryContainer.classList.add("parceiro__card__category");
-      categoryImg.src = getCategoryImageInfo("src", partner.category);
+      categoryImg.src = getCategoryImageInfo("src", partner.category).slice(1);
       categoryImg.alt = getCategoryImageInfo("alt", partner.category);
       categoryName.innerText = partner.category;
 

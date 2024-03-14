@@ -2,10 +2,17 @@ body {
     background-color: var(--color-mode);
 }
 
+main {
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
 main > :nth-child(2) {
     margin: 5dvh auto;
     width: min(160rem, 95%);
-    overflow: auto;
 }
 
 .styled-table {

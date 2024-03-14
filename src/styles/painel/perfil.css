@@ -86,3 +86,27 @@ body {
     min-width: 25%;
     border-radius: 0.9rem;
 }
+
+@media (max-width: 860px) {
+    .profile__main > img {
+        width: 40%;
+    }
+    .profile__info {
+        width: auto;
+    }
+    .profile__main {
+        justify-content: center;
+    }
+    .profile__pictures {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile__main > img {
+        width: 19rem;
+    }
+    .profile__main {
+        flex-direction: column;
+    }
+}

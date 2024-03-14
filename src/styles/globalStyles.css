@@ -1,26 +1,4 @@
-@font-face {
-    font-family: Omnes;
-    src: url("../font/Omnes\ SemiBold.ttf");
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: Omnes;
-    src: url("../font/Omnes\ Black.ttf");
-    font-weight: bolder;
-}
-
-@font-face {
-    font-family: Omnes;
-    src: url("../font/Omnes\ Light.ttf");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: Omnes;
-    src: url("../font/Omnes\ Thin.ttf");
-    font-weight: 100;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
     --color-brand-1: #30996b;
@@ -41,9 +19,6 @@
     --color-day: rgba(65,62,138,0.02);
 
     font-size: 62.5%;
-
-    /* ------------style guide fonts-------------------- */
-    --title-1: 600 1.25rem/1.6rem 'Inter';
     /* ---------------extra fonts----------------------------- */
 }
 
@@ -63,11 +38,11 @@ body{
     max-width: 190rem;
     min-height: 100dvh;
     margin: auto;
-    font-family: 'Omnes';
+    font-family: 'Raleway';
 }
 
 button{
-    font-family: 'Omnes';
+    font-family: 'Raleway';
 }
 
 .toast { 

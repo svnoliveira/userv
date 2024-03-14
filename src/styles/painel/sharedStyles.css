@@ -1,13 +1,16 @@
+main {
+    padding-top: 2rem;
+    overflow: hidden;
+}
 header {
     background-color: var(--color-mode);
-    height: 8dvh;
+    min-height: 8dvh;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
     position: relative;
     z-index: 2;
 }
-
 header > div {
     max-width: 140rem;
     margin: auto;
@@ -26,14 +29,11 @@ header img {
 }
 
 footer {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 1rem 0;
+    text-align: center;
 }
 
 .painel__nav {
-    margin: 5dvh auto;
     width: min(160rem, 95%);
     display: flex;
     justify-content: center;
@@ -49,15 +49,17 @@ footer {
 
 .painel__nav {
     width: 100%;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .painel__nav a{
     background-color: rgba(48,153,107,0.15);
     border-radius: 0.5rem;
-    width: 20%;
+    width: 10rem;
     padding: 1rem 0;
     color: black;
-    font-size: clamp(1.2rem, 2.2vw, 2rem);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
     text-decoration: none;
     transition: 0.5s;
 }
@@ -71,4 +73,34 @@ footer {
 .painel__nav a:hover{
     background-color: var(--color-brand-2);
     color: var(--color-mode);
+}
+
+@media (max-width: 960px) {
+    #partner__header__nav {
+        position: absolute;
+        top: 25%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+    #partner__header__nav > .btn--nav{
+        margin-right: 0.8rem;
+    }
+    header > div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .painel__nav {
+        padding-bottom: 0.5rem;
+        gap: 0.2rem;
+    }
+}
+@media (max-width: 960px) {
+    header img {
+        height: 5dvh;
+    }
+}
+@media (max-width: 320px) {
+    header img {
+        margin-right: auto;
+    }
 }

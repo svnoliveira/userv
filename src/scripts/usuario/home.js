@@ -1,4 +1,4 @@
-import { handleUsuarioHeader, userRouteProtection } from "../render.js";
+import { handleMobileDrag, handleUsuarioHeader, userRouteProtection } from "../render.js";
 import {
   handleCategoryFilters,
   handleSearchButtons,

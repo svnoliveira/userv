@@ -97,7 +97,7 @@ main {
 
 .usuario__filter {
     background-color: var(--color-mode);
-    width: 25%;
+    width: 29.5rem;
     height: 60rem;
     border-radius: 3rem;
     padding: 1.8rem;
@@ -129,6 +129,7 @@ aside .filter__header span {
 .usuario__list__container {
     background-color: var(--color-mode);
     width: 60%;
+    padding-left: 2rem;
 }
 
 .range {
@@ -144,7 +145,7 @@ aside .filter__header span {
     width: 100%;
     height: 100%;
     position: absolute;
-    bottom: 10rem;
+    bottom: 13rem;
 }
 
 .range-slider {
@@ -219,7 +220,8 @@ aside .filter__header span {
 }
 
 aside ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
@@ -269,7 +271,7 @@ aside ul img {
 }
 
 #usuario__search__box img{
-    width: 5%;
+    width: min(6.7rem, 10%);
     height: auto;
     background-color: rgba(67, 50, 142, 0.15);
     border-radius: 0.5rem;
@@ -282,7 +284,7 @@ aside ul img {
 }
 
 #usuario__search__box input {
-    width: 56.5%;
+    width: min(40.2rem, 60%);
     padding: 1.2rem 1rem;
     border: 0.2rem var(--color-brand-1) solid;
     border-radius: 1.5rem 0 0 1.5rem;
@@ -290,7 +292,7 @@ aside ul img {
 }
 
 #usuario__search__box button {
-    width: 17.5%;
+    width: min(20.1rem, 30%);
     padding: 1.2rem 1rem;
     border: 0.2rem var(--color-brand-1) solid;
     border-radius: 0 1.5rem 1.5rem 0;
@@ -311,7 +313,7 @@ aside ul img {
 }
 
 .usuario__search__header {
-    width: 80%;
+    width: min(67rem, 100%);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -325,7 +327,7 @@ aside ul img {
 }
 
 .usuario__search__list {
-    width: 80%;
+    width: min(67rem, 100%);
     height: 60dvh;
     overflow-y: auto;
     margin: 1rem 0;
@@ -346,8 +348,8 @@ aside ul img {
 }
 
 .parceiro__card > img{
-    width: 15rem;
-    height: 15rem;
+    width: clamp(7rem, 18dvw, 15rem);
+    height: clamp(7rem, 18dvw, 15rem);
     border-radius: 0.4rem;
 }
 
@@ -471,4 +473,104 @@ footer {
 
 .modal__services li:hover {
     background-color: rgba(48, 153, 107, 0.15);
+}
+
+@media (max-width: 1541px) {
+    .usuario__search__list {
+        justify-content: center;
+        padding-right: 2rem;
+    }
+    .parceiro__card{
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1090px) {
+    .usuario__header__location{
+        position: static;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    header > div {
+        justify-content: space-around;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    header nav button {
+        margin-right: 0;
+        position: static;
+        transform: none;
+        text-align: left;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 740px) {
+
+    main {
+        position: relative;
+        margin: 1dvh 0 0 0.5rem;
+        width: 100dvw;
+        overflow-x: hidden;
+    }
+    
+    .usuario__filter {
+        position: absolute;
+        z-index: 4;
+        border-radius: 0 0 4rem 4rem;
+        border-left: 0.5rem solid var(--color-mode);
+        border: 0.5rem solid var(--color-mode);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        min-height: 0;
+        padding: 3rem 2rem;
+        left: 50%;
+        top: 13rem;
+        transform: translateX(-50%);
+        cursor: grab;
+    }
+    
+    .usuario__list__container {
+        width: 85%;
+        padding: 0 0.2rem;
+    }
+}
+
+@media (max-width: 660px) {
+    header > div {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    header nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .usuario__header__location input {
+        padding: 0 1rem;
+    }
+    .dropbtn {
+        padding: 0 1rem 0 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .parceiro__card__category {
+        bottom: -2.2rem;
+        right: -2.2rem;
+    }
+    .parceiro__card__category span{
+        display: none;
+    }
+}
+
+@media (max-width: 340px) {
+    .parceiro__card__price :first-child{
+        display: none;
+    }
 }

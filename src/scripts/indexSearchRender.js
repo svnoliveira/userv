@@ -31,6 +31,8 @@ export const renderModal = (partner) => {
   const address = document.querySelector(".modal__info .address");
   const price = document.querySelector(".modal__services > .price");
   const serviceList = document.querySelector(".modal__services ul");
+  const categoryIcon = document.querySelector("#modal__container .parceiro__card__category img");
+  const categoryName = document.querySelector("#modal__container .parceiro__card__category span");
 
   name.innerText = partner.fantasyName;
   image.src = partner.image.slice(1);
@@ -38,6 +40,9 @@ export const renderModal = (partner) => {
   email.innerText = partner.email;
   address.innerText = `${partner.address.city}, ${partner.address.uf}`;
   price.innerText = `Preços à partir de ${formatPrice(partner.startingPrice)}`;
+  categoryIcon.src = getCategoryImageInfo('src', partner.category).slice(1);
+  categoryIcon.alt = getCategoryImageInfo('alt', partner.category);
+  categoryName.innerText = partner.category;
 
   while (serviceList.firstChild) {
     serviceList.removeChild(serviceList.firstChild);
